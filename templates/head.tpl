@@ -20,6 +20,8 @@
         <![endif]-->
         <!-- Custom styles for this template -->
         <link href="//www.nmsu.edu/resources/css/nmsu.min.css" rel="stylesheet" type="text/css">
+        <link href="//ict435-met.nmsu.edu/abet-met/assets/font.css" rel="stylesheet" type="text/css">
+
         <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <!--[if IE 10]><script src="//www.nmsu.edu/resources/js/ie10-viewport.min.js"></script><![endif]-->
         <style type="text/css">
