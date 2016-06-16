@@ -24,7 +24,7 @@
             <div class="container">
                 <ul id="affix-ul" class="nav nav-justified">
 		{foreach $Sections as $Section}
-                    <li{if $Section@first} class="active"{/if}><a href="#section_{$Section.title}">{$Section.title}</a></li>
+                    <li{if $Section@first} class="active"{/if}><a href="#section_{$Section.title|replace:' ':'-'}">{$Section.title}</a></li>
 		{/foreach}
                 </ul>
             </div>
@@ -38,7 +38,7 @@
                 <div id="content" class="col-sm-12" role="main">
                     <h1>Objectives and Outcomes <small>2016-2017</small></h1>
                     {foreach $Sections as $Section}
-                    <article id="section_{$Section.title}">
+                    <article id="section_{$Section.title|replace:' ':'-'}">
                         <h2>{$Section.title}</h2>
                         {$Section.content}
                     </article>
