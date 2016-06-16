@@ -3,3 +3,4 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^documentation/(.*)$ https://ict435-met.nmsu.edu/abet-met/docs.php?page=$1 [NC,L,QSA]
+RewriteRule ^documentation$ https://ict435-met.nmsu.edu/abet-met/docs.php [NC,L,QSA]
