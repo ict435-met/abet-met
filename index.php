@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require 'config.php';
 
@@ -71,3 +72,14 @@ context; and</p>
 $smarty->display('index.tpl');
 
 ?>
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<title>ABET-MET</title>
+</head>
+<body>
+Hello World!
+</body>
+</html>
+>>>>>>> 4bc6f3526c30908b3d6fea659940d4e5e215f815
