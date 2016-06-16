@@ -44,9 +44,9 @@ if ($pageUrl[0] == "courses") {
                         '),
 	array("title" => "Sample Homework",
 	      "content" => '<div class="list-group" role="menu">
-                            <a href="sample-good.pdf" role="menuitem" class="list-group-item">The Good</a>
-                            <a href="sample-average.pdf" role="menuitem" class="list-group-item">The Average</a>
-                            <a href="sample-bad.pdf" role="menuitem" class="list-group-item">The Bad</a>
+                            <a href="sample-good.pdf" role="menuitem" class="list-group-item">The Good <span class="badge">pdf</span></a>
+                            <a href="sample-average.pdf" role="menuitem" class="list-group-item">The Average <span class="badge">pdf</span></a>
+                            <a href="sample-bad.pdf" role="menuitem" class="list-group-item">The Bad <span class="badge">pdf</span></a>
                             </div>')
 );
 	} else {
