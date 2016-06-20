@@ -8,12 +8,12 @@ $bread = array(
 
 $pageTemplate = 'two-column.tpl';
 // Process that page data we're 'hopefully' given
-$pageUrl = explode('/', $_GET['page']);
+$pageUrl = explode('/', strtolower($_GET['page']));
 if ($pageUrl[1] == "courses") {
 	$bread[] = array("Courses", SITE_ROOT."documentation/courses/");
-	$realCourses = array("et110","et182");
-	if (count($pageUrl) >= 3 && in_array(strtolower($pageUrl[2]), $realCourses)) {
-		$docArray = array("sample-good.pdf","sample-average.pdf","sample-bad.pdf");
+	include_once("data/courses.data");
+	if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
+		$docArray = array("syllabi","sample-good.pdf","sample-average.pdf","sample-bad.pdf");
 		if (count($pageUrl) == 4 && in_array($pageUrl[3], $docArray)) {
 			header("Content-type: application/pdf");
 			header("Content-Disposition: inline; filename=filename.pdf");
@@ -55,13 +55,13 @@ if ($pageUrl[1] == "courses") {
 		$smarty->assign("ContentTitle", "Courses");
 		$smarty->assign("ContentSubtitle","Mechanical Engineering Technology");
 		$url = SITE_ROOT . "documentation/courses/";
-		$sections = array(
-			array("title" => "ET110 - Introduction to Computer-Aided Drafting and Design",
-			      "titleLink" => $url."et110/",
-			      "content" => 'Course Description'),
-			array("title" => "ET182 - Digital Logic",
-			      "titleLink" => $url."et182/",
-			      "content" => 'Course Description'));
+		$sections = array();
+		foreach($metCourses as $c_title => $c_data) {
+			$sections[] =  array(
+				"title" => strtoupper($c_title)." - ".$c_data['title'],
+			      "titleLink" => $url.$c_title."/",
+			      "content" => "Course Description");
+		}
 	}
 } else {
 	$pageTemplate = 'one-column.tpl';

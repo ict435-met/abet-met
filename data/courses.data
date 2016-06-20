@@ -1,0 +1,23 @@
+<?php
+$metCourses = array(
+/* SAMPLE SAMPLE SAMPLE
+ *  "univ100" => array (
+ *  	"title" => "NMSU for Dummies",
+ *      "description" => "Underwater basketweaving, rocket surgery.",
+ *      "syllabi" => "files/univ100-syllabi.pdf",
+ *      "sample_good" => "files/univ100-good.pdf",
+ *      "sample_average" => "files/univ100-average.pdf",
+ *      "sample_bad" => "files/univ100-bad.pdf"
+ *		) // END univ100
+ */
+ 	"et110" => array (
+		"title" => "Introduction to Computer-Aided Drafting and Design"
+	), // END et110
+	"et182" => array (
+		"title" => "Digital Logic"
+	), // END et182
+	"et190" => array (
+		"title" => "Applied Circuits"
+	) // END et182
+); // END $metCourses
+?>
