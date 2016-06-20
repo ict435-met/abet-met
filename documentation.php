@@ -9,12 +9,12 @@ $bread = array(
 $pageTemplate = 'two-column.tpl';
 // Process that page data we're 'hopefully' given
 $pageUrl = explode('/', $_GET['page']);
-if ($pageUrl[0] == "courses") {
+if ($pageUrl[1] == "courses") {
 	$bread[] = array("Courses", SITE_ROOT."documentation/courses/");
 	$realCourses = array("et110","et182");
-	if (count($pageUrl) >= 2 && in_array(strtolower($pageUrl[1]), $realCourses)) {
+	if (count($pageUrl) >= 3 && in_array(strtolower($pageUrl[2]), $realCourses)) {
 		$docArray = array("sample-good.pdf","sample-average.pdf","sample-bad.pdf");
-		if (count($pageUrl) == 3 && in_array($pageUrl[2], $docArray)) {
+		if (count($pageUrl) == 4 && in_array($pageUrl[3], $docArray)) {
 			header("Content-type: application/pdf");
 			header("Content-Disposition: inline; filename=filename.pdf");
 			@readfile('files/test.pdf');
@@ -22,8 +22,8 @@ if ($pageUrl[0] == "courses") {
 		}
 		/* DB / File query to check if course exists and get name etc */
 
-		$bread[] = array($pageUrl[1], SITE_ROOT."documentation/courses/".$pageUrl[1]);
-		$smarty->assign("ContentTitle",strtoupper($pageUrl[1]));
+		$bread[] = array($pageUrl[2], SITE_ROOT."documentation/courses/".$pageUrl[2]);
+		$smarty->assign("ContentTitle",strtoupper($pageUrl[2]));
 		$smarty->assign("ContentSubtitle","Course Title Goes Here");
 		$sections = array(
 	array("title" => "Course Description",
@@ -66,7 +66,7 @@ if ($pageUrl[0] == "courses") {
 } else {
 	$pageTemplate = 'one-column.tpl';
 	$smarty->assign("ContentTitle","Documentation");
-	$smarty->assign("ContentSubtitle","");
+	$smarty->assign("ContentSubtitle",$_GET['page']);
 	$url = SITE_ROOT . "documentation/";
 	$sections = array(
 		array("title" => 'Outcome Measures (WEAVE Documentation)',

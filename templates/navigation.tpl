@@ -5,7 +5,7 @@
                     <div class="collapse navbar-collapse" id="main-navigation-options">
                         <ul class="nav navbar-nav">
                             <li><a href="{$smarty.const.SITE_ROOT}">Objectives and Outcomes</a></li>
-                            <li><a href="#">Self Study</a></li>
+                            <li><a href="#">Self Study</li>
                             <li><a href="{$smarty.const.SITE_ROOT}documentation/" class="dropdown-toggle" data-toggle="dropdown" role="button">Documentation <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="{$smarty.const.SITE_ROOT}documentation/outcome-measures/">Outcome Measures (WEAVE Documentation)</a></li>
@@ -15,7 +15,7 @@
                                     <li><a href="{$smarty.const.SITE_ROOT}documentation/courses/">Courses</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Faculty</a></li>
+                            <li><a href="{$smarty.const.SITE_ROOT}faculty/">Faculty</a></li>
                             <li><a href="#">Facilities</a></li>
                         </ul>
                     </div>
