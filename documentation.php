@@ -13,18 +13,25 @@ if ($pageUrl[1] == "courses") {
 	$bread[] = array("Courses", SITE_ROOT."documentation/courses/");
 	include_once("data/courses.data");
 	if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
+		/* Move selected course into easy to use variable */
+		$course = $metCourses[$pageUrl[2]];
+		
 		$docArray = array("syllabi","sample-good.pdf","sample-average.pdf","sample-bad.pdf");
 		if (count($pageUrl) == 4 && in_array($pageUrl[3], $docArray)) {
+			$t_sFile = str_replace('-','_',substr($pageUrl[3], 0, -4));
+			$file = $course[$t_sFile];
+			if (!isset($file)) {
+				$file = 'files/test.pdf';
+			}
 			header("Content-type: application/pdf");
 			header("Content-Disposition: inline; filename=filename.pdf");
-			@readfile('files/test.pdf');
+			@readfile($file);
 			exit;
 		}
-		/* DB / File query to check if course exists and get name etc */
-
+		
 		$bread[] = array($pageUrl[2], SITE_ROOT."documentation/courses/".$pageUrl[2]);
 		$smarty->assign("ContentTitle",strtoupper($pageUrl[2]));
-		$smarty->assign("ContentSubtitle","Course Title Goes Here");
+		$smarty->assign("ContentSubtitle",$course['title']);
 		$sections = array(
 	array("title" => "Course Description",
 	      "content" => '<figure class="figure-bordered figure-inline pull-right">
@@ -41,14 +48,13 @@ if ($pageUrl[1] == "courses") {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida cursus massa et convallis. Vivamus non quam nec urna maximus eleifend. Mauris non sapien ac erat vehicula luctus. Etiam faucibus ligula eu eros varius, nec finibus lacus feugiat. Nunc quis sem suscipit, consectetur ex sed, scelerisque lectus. Phasellus turpis nunc, rutrum a consectetur vitae, dictum in magna. Ut vel faucibus nisl. Maecenas ac sagittis orci. In lacinia vitae nisl ac fermentum. Curabitur rutrum ipsum magna, ut imperdiet massa vestibulum eu.</p>
                         <p>Aenean at orci ac nunc gravida imperdiet. Proin pretium enim eget elit faucibus iaculis. Suspendisse fringilla, leo sit amet volutpat eleifend, nunc massa suscipit risus, ac facilisis sem massa vel tortor. Vivamus ullamcorper mi tortor, nec tincidunt nisl feugiat sollicitudin. Sed volutpat consequat sapien, at faucibus enim. Pellentesque varius bibendum diam vel elementum. Aenean non leo vitae sapien varius aliquet id eu sem. Sed sit amet accumsan lorem. Vivamus dictum at justo a fringilla.</p>
                         <p>Mauris scelerisque ante ac molestie tempor. Ut commodo ligula in tristique viverra. Mauris condimentum sollicitudin gravida. Fusce ullamcorper pharetra ipsum. Phasellus in nisi sit amet ante efficitur egestas id eu augue. Fusce gravida metus vitae tellus suscipit tincidunt. Nam vitae aliquam felis. In porta, sem ac sodales condimentum, orci felis malesuada quam, eu luctus libero erat in nisl. Quisque in aliquam elit, quis tristique enim. Donec vitae imperdiet metus, eu congue arcu. Nulla facilisi. Quisque quis turpis dictum, fringilla arcu vitae, sollicitudin sapien. Pellentesque sed lacus vitae ex tristique scelerisque. Donec volutpat sem eget elementum vestibulum. </p>
-                        '),
-	array("title" => "Sample Homework",
-	      "content" => '<div class="list-group" role="menu">
-                            <a href="sample-good.pdf" role="menuitem" class="list-group-item">The Good <span class="badge">pdf</span></a>
-                            <a href="sample-average.pdf" role="menuitem" class="list-group-item">The Average <span class="badge">pdf</span></a>
-                            <a href="sample-bad.pdf" role="menuitem" class="list-group-item">The Bad <span class="badge">pdf</span></a>
-                            </div>')
-);
+                        '));
+	$t_sHW = "";
+	foreach (array("good","average","bad") as $i) {
+			$t_sHW .= '<a href="sample-'.$i.'.pdf" role="menuitem" class="list-group-item">The '.ucfirst($i).'<span class="badge">pdf</span></a>';
+	}
+		$sections[] = array("title" => "Sample Homework",
+			      "content" => '<div class="list-group" role="menu">'.$t_sHW.'</div>');
 	} else {
 		$pageTemplate = 'one-column.tpl';
 
