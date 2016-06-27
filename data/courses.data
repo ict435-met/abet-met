@@ -19,12 +19,12 @@ $metCourses = array(
 	), // END et182
 	"et190" => array (
 		"title" => "Applied Circuits"
-	) // END et182
+	), // END et182
 	"et210" => array (
 		"title" => "Computer-Aided Design"
-	) // END et210
+	), // END et210
 	"et240" => array (
 		"title" => "Applied Statics"
-	) //END et240
+	), //END et240
 ); // END $metCourses
 ?>
