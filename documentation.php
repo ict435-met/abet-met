@@ -79,7 +79,7 @@ if ($pageUrl[1] == "courses") {
                       "titleLink" => $url."outcome-measures/",
 		      "content" => '<p>What is Outcomes measures? Who knows?</p>'),
 		array("title" => 'Objectives and Outcomes Archives',
-                      "titleLink" => $url.RockObjects.html,
+                      "titleLink" => $url."RockObjects.html/",
 		      "content" => '<p>What is this? Who knows?</p>'
 		array("title" => 'IAC Agenda and Minutes',
                       "titleLink" => $url."iac-agenda-and-minutes/",
