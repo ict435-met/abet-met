@@ -17,8 +17,8 @@ $metCourses = array(
  */
  	"et110" => array (
 		"title" => "Introduction to Computer-Aided Drafting and Design",
+		"description" => "this is a test!",		
 		"sample_good" => "files/test2.pdf",
-		"description" => "this is a test!",
 		"syllabi" => "files/test2.pdf"
 	), // END et110
 	"et182" => array (
