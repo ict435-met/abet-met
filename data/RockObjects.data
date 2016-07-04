@@ -13,10 +13,12 @@ $OO_maxYear = 2016;
 /* Another link to the navigation breadcrumbs */
 $bread[] = array("Objectives and Outcomes Archives", SITE_ROOT."documentation/objectives-and-outcomes-archives/");
 if (count($pageUrl) >= 3 && $pageUrl[2] <= $OO_maxYear && $pageUrl[2] >= $OO_minYear){
-	$bread[] = array($pageUrl[2], SITE_ROOT."documentation/objectives-and-outcomes-archives/".$pageUrl[2]);
-	$smarty->assign("ContentTitle", "Objectives and Outcomes ".$pageUrl[2]);
-	if($pageUrl[2] == '2016') {
-$sections = array();
+	$file = "objective_outcomes_".$pageUrl[2].".pdf";
+	header("Content-type: application/pdf");
+	header('Content-Disposition: inline; filename="'.$file.'"');
+	readfile('files/'.$file);
+	exit;
+/*$sections = array();
 $sections[] = array("title" => "Program Education Objectives",
 "content" => "
 <p>The educational objectives of the Mechanical Engineering Technology Program are to produce graduates who, within three years of graduation are able to:
@@ -58,19 +60,20 @@ The Program Educational Outcomes are assessed using a combination of the followi
 </strong>
 </p>");
 $sections[] = array("title" => "Download",
-"content" => '<a href="pdf" role="menuitem" >Objectives and Outcomes '.$pageUrl[2].'<span class="badge">pdf</span>');
-	}
+"content" => '<a href="pdf" role="menuitem" >Objectives and Outcomes '.$pageUrl[2].'<span class="badge">pdf</span>');*/
+	
 } else {
 	$pageTemplate = 'one-column.tpl';
 	$smarty->assign("ContentTitle", "Objectives and Outcomes Archives");
 	$smarty->assign("ContentSubtitle","Mechanical Engineering Technology");
 	$url = SITE_ROOT . "documentation/objectives-and-outcomes-archives/";
 	$sections = array();
+	$t_sOO = "";
 	for($year = $OO_maxYear; $year >= $OO_minYear; $year--) {
-		$sections[] =  array(
-			"title" => $year,
-		    "titleLink" => $url.$year."/");
+		$t_sOO .= '<a href="'.$year.'" role="menuitem" class="list-group-item">'.$year.'<span class="badge">pdf</span></a>';
 	}
+		$sections[] = array("title" => " ",
+			      "content" => '<div class="list-group" role="menu">'.$t_sOO.'</div>');
 }
 ?>
 
