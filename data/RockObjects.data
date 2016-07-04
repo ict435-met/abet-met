@@ -1,0 +1,79 @@
+<?php 
+/* Define which template to use */
+$pageTemplate = 'two-column.tpl';
+
+/* Check to see if the template system is initialized before accessing */
+if (isset($smarty)) {
+	$smarty->assign("ContentTitle", "Objectives and Outcomes Archives");
+	$smarty->assign("ContentSubtitle", " ");
+}
+$OO_minYear = 2009;
+$OO_maxYear = 2016;
+
+/* Another link to the navigation breadcrumbs */
+$bread[] = array("Objectives and Outcomes Archives", SITE_ROOT."documentation/objectives-and-outcomes-archives/");
+if (count($pageUrl) >= 3 && $pageUrl[2] <= $OO_maxYear && $pageUrl[2] >= $OO_minYear){
+	$file = "objective_outcomes_".$pageUrl[2].".pdf";
+	header("Content-type: application/pdf");
+	header('Content-Disposition: inline; filename="'.$file.'"');
+	readfile('files/'.$file);
+	exit;
+/*$sections = array();
+$sections[] = array("title" => "Program Education Objectives",
+"content" => "
+<p>The educational objectives of the Mechanical Engineering Technology Program are to produce graduates who, within three years of graduation are able to:
+<li> Be employed in fields of engineering such as design, research, development, applications, testing, manufacturing, processing, safety, quality, and technical sales or service:
+For B.S. degree recipients, as an engineer or engineering technologist
+<li> Achieve positions of increased responsibility (technical and/or supervisory) within an organization; and progress through advanced degree or certificate programs or participate in continuing education in engineering, business, and/or other professionally related fields.
+<li> Progress through advanced degree or certificate programs or participate in continuing education in engineering, business, and/or other professionally related fields.</p>");
+$sections[] = array("title" => "Student Outcomes",
+"content" => "<p>
+<ul>
+<li> An ability to select and apply the knowledge, techniques, skills, and modern tools of the discipline to broadly-defined engineering technology activities;
+<li> An ability to select and apply a knowledge of mathematics, science, engineering, and technology to engineering technology problems that require the application of principles and applied procedures or methodologies;
+<li> An ability to conduct standard tests and measurements; to conduct, analyze, and interpret experiments; and to apply experimental results to improve processes;
+<li> An ability to design systems, components, or processes for broadly-defined engineering technology problems appropriate to program educational objectives;
+<li> An ability to function effectively as a member or leader on a technical team;
+<li> An ability to identify, analyze, and solve broadly-defined engineering technology problems;
+<li> An ability to apply written, oral, and graphical communication in both technical and non-technical environments; and an ability to identify and use appropriate technical literature;
+<li> An understanding of the need for and an ability to engage in self-directed continuing professional development;
+<li> An understanding of and a commitment to address professional and ethical responsibilities including a respect for diversity;
+<li> A knowledge of the impact of engineering technology solutions in a societal and global context; and commitment to quality, timeliness, and continuous improvement.
+<li> Program-specific (MET) Outcome (L): The program must demonstrate that graduates can apply specific program principles to the:
+<li>i   (Sophomore/A.S.-level) specification, fabrication, test, operation, or documentation of basic mechanical systems or processes
+<li>ii   (Senior/B.S.-level) analysis, design, development, implementation, or oversight of more advanced mechanical systems or processes. 
+</p>
+</ul>");
+ $sections[] = array ("title" => " ",
+"content" => "
+According the ABET accreditation agency, &quot;Program Educational Objectives are broad statements that describe the career and professional accomplishments that the program is preparing graduate to achieve. Program Educational Outcomes are narrower statements that describe what students are to know and be able to do by the time of graduation.&quot;
+The Program Educational Objectives were established through the input from employers of our students, alumni, and industrial constitutes of the program. The achievement of Program Educational Objectives is assessed through the use of alumni and employer surveys, as well as employer focus groups.
+ 
+<strong>
+<p>
+The Program Educational Outcomes are assessed using a combination of the following instruments:
+<li> Direct assessment of Student work. Each year faculty members in the program assess graded examples of student work to determine the level of achievement. The examples of student work are linked directly the Program Educational Outcomes.
+<li> Senior Exit Surveys. This assessment survey is completed by all graduating seniors in which they are asked to rate how well the Educational Outcomes were achieved.
+<li> Internship Employer Surveys. This assessment survey is completed by supervisors of students who receive internship credit. Employers are asked to rate how well the Educational Objectives were achieved.
+<li> Senior Design Industrial Sponsor Surveys. This assessment survey is completed by supervisors of senior design projects to measure how well the outcomes of the senior design experience were achieved.
+<li> Fundamentals of Engineering Exam reports from the National Council of Examiners for Engineering and Surveying. This nationally administered exam provides a national benchmark for assessing achievement of the Program Educational Outcomes.
+</strong>
+</p>");
+$sections[] = array("title" => "Download",
+"content" => '<a href="pdf" role="menuitem" >Objectives and Outcomes '.$pageUrl[2].'<span class="badge">pdf</span>');*/
+	
+} else {
+	$pageTemplate = 'one-column.tpl';
+	$smarty->assign("ContentTitle", "Objectives and Outcomes Archives");
+	$smarty->assign("ContentSubtitle","Mechanical Engineering Technology");
+	$url = SITE_ROOT . "documentation/objectives-and-outcomes-archives/";
+	$sections = array();
+	$t_sOO = "";
+	for($year = $OO_maxYear; $year >= $OO_minYear; $year--) {
+		$t_sOO .= '<a href="'.$year.'" role="menuitem" class="list-group-item">'.$year.'<span class="badge">pdf</span></a>';
+	}
+		$sections[] = array("title" => " ",
+			      "content" => '<div class="list-group" role="menu">'.$t_sOO.'</div>');
+}
+?>
+
