@@ -19,7 +19,7 @@ if ($pageUrl[1] == "courses") {
 //} else if ($pageUrl[1] == "iac-agenda-and-minutes") {
 //	@include_once("data/iac.data");
 //} else if ($pageUrl[1] == "options-assessments-meetings") {
-//	@include_once("data/ioptions_assessments.data");
+//	@include_once("data/options_assessments.data");
 
 /* If there is no match for the sub-page display the default documentation portal */
 } else {
