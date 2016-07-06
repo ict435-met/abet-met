@@ -34,7 +34,7 @@ $metCourses = array(
 		"title" => "Applied Statics"
 	), //END et240
 	"et241" => array (
-		"title => Applied Dynamics"
+		"title =>" "Applied Dynamics"
 	), //END et241
 	"et217" => array (
 		"title" => "Manufacturing Processes (with Lab)"
@@ -49,7 +49,7 @@ $metCourses = array(
 		"title" => "Fluid Technology (with lab)"
 	), //END et308
 	"et306" => array (
-		"title" => "Fundamental and Applied Thermodynamics (w/Lab)"
+		"title" => "Fundamental and Applied Thermodynamics (with Lab)"
 	), //END et306
 	"et396" => array (
 		"title" => "Heat Transfer and Applications"
