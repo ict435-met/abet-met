@@ -15,6 +15,8 @@ $metCourses = array(
  *      "sample_bad" => "files/univ100-bad.pdf"
  *		) // END univ100
  */
+ 
+ //MET Courses
  	"et110" => array (
 		"title" => "Introduction to Computer-Aided Drafting and Design",
 		"sample_good" => "files/test2.pdf"
@@ -31,6 +33,46 @@ $metCourses = array(
 	"et240" => array (
 		"title" => "Applied Statics"
 	), //END et240
+	"et241" => array (
+		"title => Applied Dynamics"
+	), //END et241
+	"et217" => array (
+		"title" => "Manufacturing Processes (with Lab)"
+	), //END et217
+	"et328" => array (
+		"title" => "Kinematics of Machines"
+	), //END et328
+	"et310" => array (
+		"title" => "Applied Stength of Materials (with lab)"
+	), //END et310
+	"et308" => array (
+		"title" => "Fluid Technology (with lab)"
+	), //END et308
+	"et306" => array (
+		"title" => "Fundamental and Applied Thermodynamics (w/Lab)"
+	), //END et306
+	"et396" => array (
+		"title" => "Heat Transfer and Applications"
+	), //END et396
+	"et426" => array (
+		"title" => "Analysis/Design of Machine Elements"
+	), //END et426
+	"et435" => array (
+		"title" => "Senior Design and Project Management"
+	),
+	"et305" => array (
+		"title" => "Design for Manufacturing"
+	), //END et305
+	"et410" => array (
+		"title" => "Senior Seminar"
+	), //END et410
+	"et422" => array (
+		"title" => "Mechanical Measurements"
+	), //END et422
+	"et402" => array (
+		"title" => "Instrumentation"
+	), //END et402
+	
 ); // END $metCourses
 
 /* Process the page */
