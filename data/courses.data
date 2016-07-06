@@ -19,7 +19,9 @@ $metCourses = array(
  //MET Courses
  	"et110" => array (
 		"title" => "Introduction to Computer-Aided Drafting and Design",
-		"sample_good" => "files/test2.pdf"
+		"description" => "this is a test!",		
+		"sample_good" => "files/test2.pdf",
+		"syllabi" => "files/test2.pdf"
 	), // END et110
 	"et182" => array (
 		"title" => "Digital Logic"
@@ -34,7 +36,7 @@ $metCourses = array(
 		"title" => "Applied Statics"
 	), //END et240
 	"et241" => array (
-		"title =>" "Applied Dynamics"
+		"title" => "Applied Dynamics"
 	), //END et241
 	"et217" => array (
 		"title" => "Manufacturing Processes (with Lab)"
@@ -101,23 +103,48 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 	$bread[] = array($pageUrl[2], SITE_ROOT."documentation/courses/".$pageUrl[2]);
 	$smarty->assign("ContentTitle",strtoupper($pageUrl[2]));
 	$smarty->assign("ContentSubtitle",$course['title']);
+	//BUILD THE CONTENT OF THE PAGE BASED ON THE THE VALUE OF $pageUrl[2], THIS WILL BE THE CLASS NAME "class"
+switch ($pageUrl[2]){
+case "et110":
 	$sections = array(
-	 array("title" => "Course Description",
-	      "content" => '<figure class="figure-bordered figure-inline pull-right">
-                            <img class="img-responsive" data-src="holder.js/200x300/auto/#882345:#fff" alt="200x300 Holder image" />
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida cursus massa et convallis. Vivamus non quam nec urna maximus eleifend. Mauris non sapien ac erat vehicula luctus. Etiam faucibus ligula eu eros varius, nec finibus lacus feugiat. Nunc quis sem suscipit, consectetur ex sed, scelerisque lectus. Phasellus turpis nunc, rutrum a consectetur vitae, dictum in magna. Ut vel faucibus nisl. Maecenas ac sagittis orci. In lacinia vitae nisl ac fermentum. Curabitur rutrum ipsum magna, ut imperdiet massa vestibulum eu.</p>
-                        <p>Aenean at orci ac nunc gravida imperdiet. Proin pretium enim eget elit faucibus iaculis. Suspendisse fringilla, leo sit amet volutpat eleifend, nunc massa suscipit risus, ac facilisis sem massa vel tortor. Vivamus ullamcorper mi tortor, nec tincidunt nisl feugiat sollicitudin. Sed volutpat consequat sapien, at faucibus enim. Pellentesque varius bibendum diam vel elementum. Aenean non leo vitae sapien varius aliquet id eu sem. Sed sit amet accumsan lorem. Vivamus dictum at justo a fringilla.</p>
-                        <p>Mauris scelerisque ante ac molestie tempor. Ut commodo ligula in tristique viverra. Mauris condimentum sollicitudin gravida. Fusce ullamcorper pharetra ipsum. Phasellus in nisi sit amet ante efficitur egestas id eu augue. Fusce gravida metus vitae tellus suscipit tincidunt. Nam vitae aliquam felis. In porta, sem ac sodales condimentum, orci felis malesuada quam, eu luctus libero erat in nisl. Quisque in aliquam elit, quis tristique enim. Donec vitae imperdiet metus, eu congue arcu. Nulla facilisi. Quisque quis turpis dictum, fringilla arcu vitae, sollicitudin sapien. Pellentesque sed lacus vitae ex tristique scelerisque. Donec volutpat sem eget elementum vestibulum. </p>
-                        '),
-	array("title" => "Syllabi",
-	      "content" => '<figure class="figure-bordered figure-inline pull-right">
-                            <img class="img-responsive" data-src="holder.js/200x300/auto/#882345:#fff" alt="200x300 Holder image" />
-                        </figure>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida cursus massa et convallis. Vivamus non quam nec urna maximus eleifend. Mauris non sapien ac erat vehicula luctus. Etiam faucibus ligula eu eros varius, nec finibus lacus feugiat. Nunc quis sem suscipit, consectetur ex sed, scelerisque lectus. Phasellus turpis nunc, rutrum a consectetur vitae, dictum in magna. Ut vel faucibus nisl. Maecenas ac sagittis orci. In lacinia vitae nisl ac fermentum. Curabitur rutrum ipsum magna, ut imperdiet massa vestibulum eu.</p>
-                        <p>Aenean at orci ac nunc gravida imperdiet. Proin pretium enim eget elit faucibus iaculis. Suspendisse fringilla, leo sit amet volutpat eleifend, nunc massa suscipit risus, ac facilisis sem massa vel tortor. Vivamus ullamcorper mi tortor, nec tincidunt nisl feugiat sollicitudin. Sed volutpat consequat sapien, at faucibus enim. Pellentesque varius bibendum diam vel elementum. Aenean non leo vitae sapien varius aliquet id eu sem. Sed sit amet accumsan lorem. Vivamus dictum at justo a fringilla.</p>
-                        <p>Mauris scelerisque ante ac molestie tempor. Ut commodo ligula in tristique viverra. Mauris condimentum sollicitudin gravida. Fusce ullamcorper pharetra ipsum. Phasellus in nisi sit amet ante efficitur egestas id eu augue. Fusce gravida metus vitae tellus suscipit tincidunt. Nam vitae aliquam felis. In porta, sem ac sodales condimentum, orci felis malesuada quam, eu luctus libero erat in nisl. Quisque in aliquam elit, quis tristique enim. Donec vitae imperdiet metus, eu congue arcu. Nulla facilisi. Quisque quis turpis dictum, fringilla arcu vitae, sollicitudin sapien. Pellentesque sed lacus vitae ex tristique scelerisque. Donec volutpat sem eget elementum vestibulum. </p>
-                        '));
+		 array(
+		 "title" => "Course Description",
+		 "content" => '<figure class="figure-bordered figure-inline pull-right">
+								<img class="img-responsive" data-src="holder.js/200x300/auto/#882345:#fff" alt="200x300 Holder image" />
+							</figure>
+							<p>This is ET110</p>'
+		 ),
+		array("title" => "Syllabi",
+			"content" => '<figure class="figure-bordered figure-inline pull-right">
+								<img class="img-responsive" data-src="holder.js/200x300/auto/#882345:#fff" alt="200x300 Holder image" />
+							</figure>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida cursus massa et convallis. Vivamus non quam nec urna maximus eleifend. Mauris non sapien ac erat vehicula luctus. Etiam faucibus ligula eu eros varius, nec finibus lacus feugiat. Nunc quis sem suscipit, consectetur ex sed, scelerisque lectus. Phasellus turpis nunc, rutrum a consectetur vitae, dictum in magna. Ut vel faucibus nisl. Maecenas ac sagittis orci. In lacinia vitae nisl ac fermentum. Curabitur rutrum ipsum magna, ut im...(line truncated)...
+							<p>Aenean at orci ac nunc gravida imperdiet. Proin pretium enim eget elit faucibus iaculis. Suspendisse fringilla, leo sit amet volutpat eleifend, nunc massa suscipit risus, ac facilisis sem massa vel tortor. Vivamus ullamcorper mi tortor, nec tincidunt nisl feugiat sollicitudin. Sed volutpat consequat sapien, at faucibus enim. Pellentesque varius bibendum diam vel elementum. Aenean non leo vitae sapien varius aliquet id eu sem. Sed sit amet accumsan lorem. Vivamus dictum at justo a fringilla.</p>
+							<p>Mauris scelerisque ante ac molestie tempor. Ut commodo ligula in tristique viverra. Mauris condimentum sollicitudin gravida. Fusce ullamcorper pharetra ipsum. Phasellus in nisi sit amet ante efficitur egestas id eu augue. Fusce gravida metus vitae tellus suscipit tincidunt. Nam vitae aliquam felis. In porta, sem ac sodales condimentum, orci felis malesuada quam, eu luctus libero erat in nisl. Quisque in aliquam elit, quis tristique enim. Donec vitae imperdiet metus, eu congue arcu. Nulla facilisi....(line truncated)...'
+		) 
+	); 
+	break;
+//ET 182 START
+case "et182":
+	$sections = array(
+		 array(
+		 "title" => "Course Description",
+			  "content" => '<figure class="figure-bordered figure-inline pull-right">
+								<img class="img-responsive" data-src="holder.js/200x300/auto/#882345:#fff" alt="200x300 Holder image" />
+							</figure>
+							<p>hello</p>
+			'),
+		array("title" => "Syllabi",
+			  "content" => '<figure class="figure-bordered figure-inline pull-right">
+								<img class="img-responsive" data-src="holder.js/200x300/auto/#882345:#fff" alt="200x300 Holder image" />
+							</figure>
+							<p>This is et 182 </p>'
+			) 
+	);
+	break;
+//ET 182 END
+
+}
 	$t_sHW = "";
 	foreach (array("good","average","bad") as $i) {
 			$t_sHW .= '<a href="sample-'.$i.'.pdf" role="menuitem" class="list-group-item">The '.ucfirst($i).'<span class="badge">pdf</span></a>';
