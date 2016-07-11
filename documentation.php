@@ -16,8 +16,8 @@ if ($pageUrl[1] == "courses") {
 	@include_once("data/RockObjects.data");
 //} else if ($pageUrl[1] == "outcome-measures") {
 //	@include_once("data/outcome_measures.data");
-//} else if ($pageUrl[1] == "iac-agenda-and-minutes") {
-//	@include_once("data/iac.data");
+} else if ($pageUrl[1] == "iac-agenda-and-minutes") {
+	@include_once("data/iac.data");
 //} else if ($pageUrl[1] == "options-assessments-meetings") {
 //	@include_once("data/options_assessments.data");
 
