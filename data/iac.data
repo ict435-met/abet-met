@@ -22,6 +22,7 @@ $IACFiles = array();
         
         if (substr($e,0,3)=="iac"){
             $iacYear =substr($e,3,4);
+			$iacYearsA[]=$iacYear;
             $iacMonth = substr($e,7,2);
             $iacDay = substr($e,9,2);
           	$iacFileName =substr($e, 0, 11);
@@ -91,20 +92,15 @@ else{
 	$smarty->assign("ContentSubtitle","Mechanical Engineering Technology");
 	$url = SITE_ROOT . "documentation/iac-agenda-and-minutes/";
 	$sections = array();
+	
+	foreach (array_unique($iacYearsA) as $a => $row){
+	 
+		 $sections[] = array( "title" => $row,
+    						  "titleLink" => $url.$row."/");
+	  
+	  }//end for
 
-	$sections = array(
-		array("title" => '2012',
-      "titleLink" => $url."2012/"),
-	  	array("title" => '2013',
-      "titleLink" => $url."2013/"),
-		array("title" => '2014',
-      "titleLink" => $url."2014/"), 
-		array("title" => '2015',
-      "titleLink" => $url."2015/") 
-	    //uncomment when addeing 2016  
-	  	//array("title" => '2016',
-        //"titleLink" => $url."2016/")
-	  );
+
 	  
   	}
 ?>
