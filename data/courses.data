@@ -94,10 +94,7 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 			$file = 'files/test.pdf';
 		}
 
-		header("Content-type: application/pdf");
-		header('Content-Disposition: inline; filename="'.$pageUrl[2].'_'.$t_sFile.'.pdf"');
-		readfile($file);
-		exit;
+		outputPDF($file, $t_sFile);
 	}
 		
 	$bread[] = array($pageUrl[2], SITE_ROOT."documentation/courses/".$pageUrl[2]);
