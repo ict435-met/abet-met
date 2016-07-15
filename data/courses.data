@@ -17,10 +17,10 @@ $metCourses = array(
  */
  
  //MET Courses
- 	"et110" => array (
+ 	"et120-ecet" => array (
 		"title" => "Introduction to Computer-Aided Drafting and Design",
 		"description" => "this is a test!",		
-		"sample_good" => "files/test2.pdf",
+		"sample_good" => "files/course-syllabi/abet_ET120_ECET_2-11.pdf",
 		"syllabi" => "files/test2.pdf"
 	), // END et110
 	"et182" => array (
@@ -102,18 +102,71 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 	$smarty->assign("ContentSubtitle",$course['title']);
 	//BUILD THE CONTENT OF THE PAGE BASED ON THE THE VALUE OF $pageUrl[2], THIS WILL BE THE CLASS NAME "class"
 switch ($pageUrl[2]){
-case "et110":
+case "et120-ecet":
 	$sections = array(
 		 array(
 		 "title" => "Course Description",
 		 "content" => '
-							<p>This is ET110</p>'
+							<p>This is ET120, ECET</p>'
 		 ),
 		array("title" => "Syllabi",
 			"content" => '
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi gravida cursus massa et convallis. Vivamus non quam nec urna maximus eleifend. Mauris non sapien ac erat vehicula luctus. Etiam faucibus ligula eu eros varius, nec finibus lacus feugiat. Nunc quis sem suscipit, consectetur ex sed, scelerisque lectus. Phasellus turpis nunc, rutrum a consectetur vitae, dictum in magna. Ut vel faucibus nisl. Maecenas ac sagittis orci. In lacinia vitae nisl ac fermentum. Curabitur rutrum ipsum magna, ut im...(line truncated)...
-							<p>Aenean at orci ac nunc gravida imperdiet. Proin pretium enim eget elit faucibus iaculis. Suspendisse fringilla, leo sit amet volutpat eleifend, nunc massa suscipit risus, ac facilisis sem massa vel tortor. Vivamus ullamcorper mi tortor, nec tincidunt nisl feugiat sollicitudin. Sed volutpat consequat sapien, at faucibus enim. Pellentesque varius bibendum diam vel elementum. Aenean non leo vitae sapien varius aliquet id eu sem. Sed sit amet accumsan lorem. Vivamus dictum at justo a fringilla.</p>
-							<p>Mauris scelerisque ante ac molestie tempor. Ut commodo ligula in tristique viverra. Mauris condimentum sollicitudin gravida. Fusce ullamcorper pharetra ipsum. Phasellus in nisi sit amet ante efficitur egestas id eu augue. Fusce gravida metus vitae tellus suscipit tincidunt. Nam vitae aliquam felis. In porta, sem ac sodales condimentum, orci felis malesuada quam, eu luctus libero erat in nisl. Quisque in aliquam elit, quis tristique enim. Donec vitae imperdiet metus, eu congue arcu. Nulla facilisi....(line truncated)...'
+				<p>Engineering Technology –ECET Option
+				Course Number and name: ET 120 Computation and Presentation Software
+				Credits & Contact Hours: 3cr. each week has three lectures of 50 min. each. Total
+				semester contact hours are approximately 37.5.
+				Instructor’s name: Carmen C. Boje
+				Textbook title, author, and year: Shaffer/Carey/Parsons/Oja//Finnegan
+				New Perspectives on Microsoft Office 2010, First Course, (ISBN 978-0-538-74653-3)
+				Course Technology, 2011
+				supplemental materials - Microsoft Office 2010, Internet Explorer, and Windows 7
+				Specific Course Information:
+				a. Course Catalog Description - The use of database, spreadsheet, and
+				presentation software in the field of engineering technology. Introduction to
+				Internet resources and construction of homepages.
+				b. Prerequisite – N/A
+				c. This course is required for both the ECET and IET degrees
+				Course Goals & Objectives:
+				a. The goals for this class are for the student to learn the most important topics of
+				Microsoft Office 2010. No prior computer experience is assumed. First it will be
+				presented an overview of computer concepts, followed by a quick introduction to
+				Windows 7. After the class is comfortable with the basics of computing and
+				operation systems, some e-mail basics and internet browsing skills are briefly
+				covered. Next, students are learning the Microsoft Office 2010 programs,
+				including four sets of tutorials including the basics of Word 2010, Excel 2010,
+				Access 2010, and PowerPoint 2010. They also learn how to integrate these
+				applications, and how to create web pages using each of these applications.
+				b. Related ABET Student Outcomes: The following are the student outcomes that
+				directly relate to Criterion 3.
+				an appropriate mastery of the knowledge, techniques, skills and modern tools
+				of their disciplines; including:
+				2) The use of application software, the design and use of operating systems,
+				the analysis, design, testing, and documentation of computer programs in
+				support of electronic, instrumentation, communications, control, and/or
+				computer systems. Also ABET 2.b, 2.c, 2.d, 2.f
+				Course topics and lecture hours devoted to each topic:
+				TOPICS  HRS.
+				 Essential Computer Concepts 1
+				 Exploring the Basics of Microsoft Windows 7 1
+				 Managing Your Files 1
+				 Browser and E-mail Basics  1
+				 Getting Started with Microsoft Office 2010 1
+				 Word 6
+				 Excel 6
+				 Access 8
+				 Power Points 3
+				 Integration  4
+				 Creating web pages  3
+				Laboratory Projects: Each laboratory class is 50 minutes. Laboratory exercises are done
+				in conjunction with the text readings and the lecture materials. The laboratories are
+				designed to learn Office 2010. Equipment utilized by the students include: computers
+				with Microsoft Office 2010, Internet Explorer, and Windows 7 installed.
+				Example of topics for laboratories include:
+				1. Lab 1: Word Project: Rails to Trails;
+				2. Lab 2 Excel Project: Displaying your investment portfolio in a chart;
+				3. Lab 3: Access Project: Your College Record;
+				4. Lab 4: Integration Project: Grant\'s Department Store-Year End Summary
+				Prepared by: Carmen C. Boje Date: 9/15/10'
 		) 
 	); 
 	break;
