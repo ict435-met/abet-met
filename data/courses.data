@@ -20,7 +20,7 @@ $metCourses = array(
  	"et120-ecet" => array (
 		"title" => "Introduction to Computer-Aided Drafting and Design",
 		"description" => "this is a test!",		
-		"sample_good" => "files/course-syllabi/abet_ET120_ECET_2011",
+		"sample_good" => "files/course-syllabi/abet_ET120_ECET_2011.pdf",
 		"syllabi" => "files/course-syllabi/abet_ET120_ECET_2011.pdf"
 	), // END et110
 	"et182" => array (
