@@ -20,7 +20,7 @@ $pageUrl = explode('/', strtolower($_GET['page']));
 if ($pageUrl[1] == "courses") {
 	@include_once("data/courses.data");
 } else if ($pageUrl[1] == "objectives-and-outcomes-archives") {
-	@include_once("data/RockObjects.data");
+	@include_once("data/objectives.data");
 //} else if ($pageUrl[1] == "outcome-measures") {
 //	@include_once("data/outcome_measures.data");
 } else if ($pageUrl[1] == "iac-agenda-and-minutes") {
