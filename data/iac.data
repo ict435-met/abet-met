@@ -52,12 +52,8 @@ $bread[] = array("IAC Agenda and Minutes", SITE_ROOT."documentation/iac-agenda-a
 if (count($pageUrl) == 5  || in_array($pageUrl[3], $IACFiles)){
 		$file = "iac-agenda-and-minutes-".$pageUrl[3];
 		$mypath=SITE_ROOT.'files/'.$pageUrl[3];
-	
-		header("Content-type: application/pdf");
-		header('Content-Disposition: inline; titleLink="'.$file.'"');
-		readfile($mypath.'.pdf');
-		exit;
-	
+		
+		outputPDF($mypath.".pdf", $file);
 	}
 
 
