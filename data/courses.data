@@ -110,9 +110,7 @@ switch ($pageUrl[2]){
 case "et120-ecet":
 	$sections = array(
 		 array(
-		 "title" => "Course Description",
-		 "content" => '
-							<p>This is ET120, ECET</p>'
+		 "title" => "ET 120 ECET",
 		 ),
 		array("title" => "Syllabi",
 			"content" => '
