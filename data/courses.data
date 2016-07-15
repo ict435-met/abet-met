@@ -9,10 +9,10 @@ $metCourses = array(
  *  "univ100" => array (
  *  	"title" => "NMSU for Dummies",
  *      "description" => "Underwater basketweaving, rocket surgery.",
- *      "syllabi" => "files/univ100-syllabi.pdf",
- *      "sample_good" => "files/univ100-good.pdf",
- *      "sample_average" => "files/univ100-average.pdf",
- *      "sample_bad" => "files/univ100-bad.pdf"
+ *      "syllabus" => "files/univ100-syllabi.pdf",
+ *      "good" => "files/univ100-good.pdf",
+ *      "average" => "files/univ100-average.pdf",
+ *      "bad" => "files/univ100-bad.pdf"
  *		) // END univ100
  */
  
@@ -20,8 +20,10 @@ $metCourses = array(
  	"et120-ecet" => array (
 		"title" => "Introduction to Computer-Aided Drafting and Design",
 		"description" => "this is a test!",		
-		"sample_good" => "files/course-syllabi/abet_ET120_ECET_2011.pdf",
-		"syllabi" => "files/course-syllabi/abet_ET120_ECET_2011.pdf"
+		"good" => "files/test.pdf",
+		"average" => "files/test.pdf",
+		"bad" => "files/test.pdf",
+		"syllabus" => "files/course-syllabi/abet_ET120_ECET_2011.pdf"
 	), // END et110
 	"et182" => array (
 		"title" => "Digital Logic"
@@ -85,7 +87,7 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 	/* Move selected course into easy to use variable */
 	$course = $metCourses[$pageUrl[2]];
 		
-	$docArray = array("syllabi","sample-good.pdf","sample-average.pdf","sample-bad.pdf");
+	$docArray = array("syllabus.pdf","good.pdf","average.pdf","bad.pdf");
 	if (count($pageUrl) == 4 && in_array($pageUrl[3], $docArray)) {
 		// Convert sample-*.pdf to sample_* to grab actual file location from array
 		$t_sFile = str_replace('-','_',substr($pageUrl[3], 0, -4));
@@ -100,8 +102,11 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 	$bread[] = array($pageUrl[2], SITE_ROOT."documentation/courses/".$pageUrl[2]);
 	$smarty->assign("ContentTitle",strtoupper($pageUrl[2]));
 	$smarty->assign("ContentSubtitle",$course['title']);
-	//BUILD THE CONTENT OF THE PAGE BASED ON THE THE VALUE OF $pageUrl[2], THIS WILL BE THE CLASS NAME "class"
+	
+//BUILD THE CONTENT OF THE PAGE BASED ON THE THE VALUE OF $pageUrl[2], THIS WILL BE THE CLASS NAME "class"
 switch ($pageUrl[2]){
+
+//ET 120-ECET START
 case "et120-ecet":
 	$sections = array(
 		 array(
@@ -170,6 +175,8 @@ case "et120-ecet":
 		) 
 	); 
 	break;
+//ET 120-ECET END
+
 //ET 182 START
 case "et182":
 	$sections = array(
@@ -189,10 +196,10 @@ case "et182":
 
 }
 	$t_sHW = "";
-	foreach (array("good","average","bad") as $i) {
-			$t_sHW .= '<a href="sample-'.$i.'.pdf" role="menuitem" class="list-group-item">The '.ucfirst($i).'<span class="badge">pdf</span></a>';
+	foreach (array("good","average","bad","syllabus") as $i) {
+			$t_sHW .= '<a href="'.$i.'.pdf" role="menuitem" class="list-group-item">The '.ucfirst($i).'<span class="badge">pdf</span></a>';
 	}
-		$sections[] = array("title" => "Sample Homework",
+		$sections[] = array("title" => "Sample Homework and Syllabus",
 			      "content" => '<div class="list-group" role="menu">'.$t_sHW.'</div>');
 } else {
 	$pageTemplate = 'one-column.tpl';
