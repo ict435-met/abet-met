@@ -1,6 +1,13 @@
 <?php
 require 'config.php';
 
+function outputPDF ($file, $savename = 'file.pdf') {
+	header("Content-type: application/pdf");
+	header('Content-Disposition: inline; filename="'.$savename.'"');
+	readfile($file);
+	exit;	
+}
+
 $bread = array(
 	array("ABET Accreditation", "#"),
 	array("M.E.T.", SITE_ROOT),
@@ -20,7 +27,11 @@ if ($pageUrl[1] == "courses") {
 	@include_once("data/iac.data");
 //} else if ($pageUrl[1] == "options-assessments-meetings") {
 //	@include_once("data/options_assessments.data");
-
+} else if ($pageUrl[1] == "self-study") {
+	outputPDF("files/self_study.pdf", "met_self_study.pdf");
+} else if ($pageUrl[1] == "facilities") {
+	outputPDF("files/test.pdf", "met_facilities.pdf");
+	
 /* If there is no match for the sub-page display the default documentation portal */
 } else {
 	$pageTemplate = 'one-column.tpl';
