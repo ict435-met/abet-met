@@ -1,5 +1,5 @@
 <?php
-define("SITE_ROOT", "https://ict435-met.nmsu.edu/abet-met/");
+define("SITE_ROOT", "https://web.nmsu.edu/~fparra/ICT435-project/abet-met/");
 
 require 'vendor/autoload.php';
 $smarty = new Smarty;
