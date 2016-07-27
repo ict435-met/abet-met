@@ -8,10 +8,10 @@
             <div class="container">
                 <div class="col-sm-10 col-sm-offset-1 text-center">
                     <div class="page-header text-center">
-                        <p class="h1 shadowed">M E T</p>
+                        <p class="h1 shadowed">MET</p>
                     </div>
                     <p class="lead shadowed">
-                        Statement message here.
+                        Mechanical Engineering Technology
                     </p>
                 </div>
             </div>
