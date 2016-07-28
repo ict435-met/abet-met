@@ -25,12 +25,12 @@ if ($pageUrl[1] == "courses") {
 	@include_once("data/weave.data");
 } else if ($pageUrl[1] == "iac-agenda-and-minutes") {
 	@include_once("data/iac.data");
-//} else if ($pageUrl[1] == "options-assessments-meetings") {
-//	@include_once("data/options_assessments.data");
+} else if ($pageUrl[1] == "options-assessments-meetings") {
+	@include_once("data/options_assessments.data");
 } else if ($pageUrl[1] == "self-study") {
 	outputPDF("files/self_study.pdf", "met_self_study.pdf");
 } else if ($pageUrl[1] == "facilities") {
-	outputPDF("files/test.pdf", "met_facilities.pdf");
+	outputPDF("files/met_fcailities.pdf", "met_facilities.pdf");
 	
 /* If there is no match for the sub-page display the default documentation portal */
 } else {
