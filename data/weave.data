@@ -1,0 +1,62 @@
+<?php 
+/* WEAVE DOCUMENTATION
+ EXpected file name format: weave_darYYYY_YYYY.pdf
+ Location is in 'files' directory.
+ 
+ No changes are needed to this as files are added.
+ 
+ */
+ 
+/* Check if date range given in URL actually represents a file */ 
+function check_Range($needle, $haystack) {
+	foreach($haystack as $stack) {
+		if($stack['range'] === $needle) {
+			return true;
+		}
+	}
+	return false;
+}
+
+/* Read in the files directory and then parse for only weave_dar* files */
+$dirContents = scandir('files', 1 );
+
+$WEAVEFiles = array();
+foreach($dirContents as $e){
+    if (substr($e,0,9)=="weave_dar"){
+        $weaveYear =substr($e,9,4);
+        $weaveFileName =substr($e, 0, -4);
+        $WEAVEFiles[]=array("year" => $weaveYear,
+				"range" => $weaveYear."-".($weaveYear + 1),
+                               "description" => "WEAVE Assesment ".$weaveYear."-".($weaveYear + 1),
+                               "fileName" => $weaveFileName);
+    }//end if
+}//end for
+
+/* Check to see if the template system is initialized before accessing */
+if (isset($smarty)) {
+	$smarty->assign("ContentTitle", "Outcome Measures (WEAVE Documentation)");
+	$smarty->assign("ContentSubtitle", " ");
+}
+
+/* Another link to the navigation breadcrumbs */
+$bread[] = array("Objectives and Outcomes Archives", SITE_ROOT."documentation/objectives-and-outcomes-archives/");
+if (count($pageUrl) >= 3 && check_Range($pageUrl[2], $WEAVEFiles)){
+	$file = "weave_dar".str_replace("-", "_", $pageUrl[2]).".pdf";
+	outputPDF("files/".$file, $file);
+
+} else {
+	$pageTemplate = 'one-column.tpl';
+	$smarty->assign("ContentTitle", "Outcome Measures (WEAVE Documentation)");
+	$smarty->assign("ContentSubtitle","Mechanical Engineering Technology");
+	$url = SITE_ROOT . "documentation/outcome-measures/";
+	$sections = array();
+	$t_sOO = "";
+	foreach($WEAVEFiles as $row) {
+		$t_linkText = $row['year'].'-'.($row['year']+1);
+		$t_sOO .= '<a href="'.$t_linkText.'" role="menuitem" class="list-group-item">'.$row['description'].'<span class="badge">pdf</span></a>';
+	}
+		$sections[] = array("title" => " ",
+			      "content" => '<div class="list-group" role="menu">'.$t_sOO.'</div>');
+}
+?>
+
