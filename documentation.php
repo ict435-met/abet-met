@@ -30,7 +30,7 @@ if ($pageUrl[1] == "courses") {
 } else if ($pageUrl[1] == "self-study") {
 	outputPDF("files/self_study.pdf", "met_self_study.pdf");
 } else if ($pageUrl[1] == "facilities") {
-	outputPDF("files/met_fcailities.pdf", "met_facilities.pdf");
+	outputPDF("files/met_facilities.pdf", "met_facilities.pdf");
 	
 /* If there is no match for the sub-page display the default documentation portal */
 } else {
