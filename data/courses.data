@@ -413,7 +413,7 @@ case "et402":
 		$sections[] =  array(
 			"title" => strtoupper($c_title)." - ".$c_data['title'],
 		      "titleLink" => $url.$c_title."/",
-		      "content" => "Course Description");
+		      "content" => (isset($c_data['description'])) ? $c_data['description'] : ''); // Print course description if it exits
 	}
 }
 ?>
