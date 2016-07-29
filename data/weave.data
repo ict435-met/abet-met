@@ -32,6 +32,10 @@ foreach($dirContents as $e){
     }//end if
 }//end for
 
+
+/* Define which template to use */
+$pageTemplate = 'two-column.tpl';
+
 /* Check to see if the template system is initialized before accessing */
 if (isset($smarty)) {
 	$smarty->assign("ContentTitle", "Outcome Measures (WEAVE Documentation)");
@@ -39,7 +43,7 @@ if (isset($smarty)) {
 }
 
 /* Another link to the navigation breadcrumbs */
-$bread[] = array("Objectives and Outcomes Archives", SITE_ROOT."documentation/objectives-and-outcomes-archives/");
+$bread[] = array("Outcome Measures (WEAVE Documentation)", SITE_ROOT."documentation/outcome-measures/");
 if (count($pageUrl) >= 3 && check_Range($pageUrl[2], $WEAVEFiles)){
 	$file = "weave_dar".str_replace("-", "_", $pageUrl[2]).".pdf";
 	outputPDF("files/".$file, $file);
