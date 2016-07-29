@@ -19,14 +19,15 @@ $metCourses = array(
  //MET Courses
  	"et120-ecet" => array (
 		"title" => "Introduction to Computer-Aided Drafting and Design",
-		"description" => "this is a test!",		
+		"description" => "The use of database, spreadsheet, and presentation software in the field of engineering technology. Introduction to Internet resources and construction of homepages.",		
 		"good" => "files/test.pdf",
 		"average" => "files/test.pdf",
 		"bad" => "files/test.pdf",
 		"syllabus" => "files/course-syllabi/abet_ET120_ECET_2011.pdf"
 	), // END et110
 	"et182" => array (
-		"title" => "Digital Logic"
+		"title" => "Digital Logic",
+		"description" => "The use of truth tables, Boolean equations, and diagrams to define, simplify, and implement logic-valued functions."
 	), // END et182
 	"et190" => array (
 		"title" => "Applied Circuits"
