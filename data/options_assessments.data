@@ -1,0 +1,69 @@
+<?php 
+/* OPTIONS ASSESSMENTS
+ EXpected file name format: options_assessments_YYYY.pdf
+ Location is in 'files' directory.
+ 
+ No changes are needed to this as files are added.
+ 
+ */
+ 
+/* Check if date range given in URL actually represents a file */ 
+function check_Year($needle, $haystack) {
+	if($haystack) {
+	foreach($haystack as $stack) {
+		if($stack['year'] === $needle) {
+			return true;
+		}
+	}
+	}
+	return false;
+}
+
+/* Read in the files directory and then parse for only weave_dar* files */
+$dirContents = scandir('files', 1 );
+
+$OAFiles = array();
+foreach($dirContents as $e){
+    if (substr($e,0,20)=="options_assessments_"){
+        $oaYear =substr($e,20,4);
+        $oaFileName =substr($e, 0, -4);
+        $OAFiles[]=array("year" => $oaYear,
+                         "description" => "Options Assessment Meetings ".$oaYear,
+                         "fileName" => $oaFileName);
+    }//end if
+}//end for
+
+/* Check to see if the template system is initialized before accessing */
+if (isset($smarty)) {
+	$smarty->assign("ContentTitle", "Options Assessments Meetings");
+	$smarty->assign("ContentSubtitle", " ");
+}
+
+/* Another link to the navigation breadcrumbs */
+$bread[] = array("Options Assessments Meetings", SITE_ROOT."documentation/options-assessments-meetings/");
+if (count($pageUrl) >= 3 && check_Year($pageUrl[2], $OAFiles)){
+	$file = "options_assessments_".$pageUrl[2].".pdf";
+	outputPDF("files/".$file, $file);
+
+} else {
+	$pageTemplate = 'one-column.tpl';
+	$smarty->assign("ContentTitle", "Options Assessments Meetings");
+	$smarty->assign("ContentSubtitle","Mechanical Engineering Technology");
+	$url = SITE_ROOT . "documentation/options-assessments-meetings/";
+	$sections = array();
+	$t_sOO = "";
+	
+	if($OAFiles) {
+	foreach($OAFiles as $row) {
+		$t_sOO .= '<a href="'.$row['year'].'" role="menuitem" class="list-group-item">'.$row['description'].'<span class="badge">pdf</span></a>';
+	}
+	
+		$sections[] = array("title" => " ",
+			      "content" => '<div class="list-group" role="menu">'.$t_sOO.'</div>');
+	} else {
+		$sections[] = array("title" => " ",
+			      "content" => 'No files have been added yet. Check back soon.');
+	}
+}
+?>
+
