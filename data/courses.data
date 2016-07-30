@@ -9,7 +9,8 @@ $metCourses = array(
  *  "univ100" => array (
  *  	"title" => "NMSU for Dummies",
  *      "description" => "Underwater basketweaving, rocket surgery.",
- *      "syllabus" => "files/univ100-syllabi.pdf",
+ *      "syllabus" => "files/course-syllabi/univ100-syllabus.pdf",
+ *      "lab_syllabus" => "files/course-syllabi/univ100-lab-syllabus.pdf", **** Optional
  *      "good" => "files/univ100-good.pdf",
  *      "average" => "files/univ100-average.pdf",
  *      "bad" => "files/univ100-bad.pdf"
@@ -28,7 +29,7 @@ $metCourses = array(
 	"et182" => array (
 		"title" => "Digital Logic",
 		"description" => "The use of truth tables, Boolean equations, and diagrams to define, simplify, and implement logic-valued functions.",
-		"syllabus" => "files/course-sullabi/abet_ET182_2011.pdf"
+		"syllabus" => "files/course-syllabi/abet_ET182_2011.pdf"
 	), // END et182
 	"et190" => array (
 		"title" => "Applied Circuits",
@@ -42,19 +43,23 @@ $metCourses = array(
 	), // END et210
 	"et240" => array (
 		"title" => "Applied Statics",
-		"description" => "Fundamental topics of applied statics, including force system analysis, equilibrium, free body diagrams, methods of joints and sections, distributed loads, friction, centroids, area moments, and shear and moment diagrams."
+		"description" => "Fundamental topics of applied statics, including force system analysis, equilibrium, free body diagrams, methods of joints and sections, distributed loads, friction, centroids, area moments, and shear and moment diagrams.",
+		"syllabus" => "files/course-syllabi/abet_ET240-2010Fall.pdf"
 	), //END et240
 	"et241" => array (
 		"title" => "Applied Dynamics",
-		"description" => "Applied kinematic and kinetic planer analysis of particles and rigid bodies, including use of kinematic equations, Newton's second law, the work energy method, and the impulse momentum method. With recitation sessions, as required."
+		"description" => "Applied kinematic and kinetic planer analysis of particles and rigid bodies, including use of kinematic equations, Newton's second law, the work energy method, and the impulse momentum method. With recitation sessions, as required.",
+		"syllabus" => "files/course-syllabi/abet_ET241_2010Fall.pdf"
 	), //END et241
 	"et217" => array (
 		"title" => "Manufacturing Processes (with Lab)",
-		"description" => "Manufacturing methods and industrial processes which include casting, forming and machining. Introduction to the composition, fabrication, characteristics, and applications of industrial materials."
+		"description" => "Manufacturing methods and industrial processes which include casting, forming and machining. Introduction to the composition, fabrication, characteristics, and applications of industrial materials.",
+		"syllabus" => "files/course-syllabi/abet_ET217_2011.pdf"
 	), //END et217
 	"et328" => array (
 		"title" => "Kinematics of Machines",
-		"description" => "Kinematic analysis of machine elements with topics of linkages, cams, and gears. Graphical and analytical solutions using computer techniques."
+		"description" => "Kinematic analysis of machine elements with topics of linkages, cams, and gears. Graphical and analytical solutions using computer techniques.",
+		"syllabus" => "files/course-syllabi/abet_ET328_2010Fall.pdf"
 	), //END et328
 	"et310" => array (
 		"title" => "Applied Strength of Materials (with lab)",
@@ -70,7 +75,9 @@ $metCourses = array(
 	), //END et306
 	"et396" => array (
 		"title" => "Heat Transfer and Applications",
-		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design."
+		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design.",
+		"syllabus" => "files/course-syllabi/abet_ET306_2011.pdf",
+		"lab_syllabus" => "files/course-syllabi/abet_ET306L_2011.pdf"
 	), //END et396
 	"et426" => array (
 		"title" => "Analysis/Design of Machine Elements",
@@ -134,9 +141,14 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 		);
 	}
 	
+	$labSyllabusLink = "";
+	if (isset($course['lab_syllabus'])) {
+		$labSyllabusLink = '<a href="lab-syllabus.pdf" role="menuitem" class="list-group-item">'.$course['shortTitle'].' Lab Syllabus<span class="badge">pdf</span></a>';
+	}
+	
 	$sections[] = array(
-		"title" => "Syllabi",
-		"content" => '<a href="syllabus.pdf" role="menuitem" class="list-group-item">'.$course['shortTitle'].' Syllabus<span class="badge">pdf</span></a>'
+		"title" => ((isset($course['lab_syllabus'])) ? "Syllabi" : "Syllabus"),
+		"content" => '<div class="list-group" role="menu"><a href="syllabus.pdf" role="menuitem" class="list-group-item">'.$course['shortTitle'].' Syllabus<span class="badge">pdf</span></a>'.$labSyllabusLink.'</div>'
 	);
 
 
