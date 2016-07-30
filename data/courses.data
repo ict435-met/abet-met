@@ -27,15 +27,18 @@ $metCourses = array(
 	), // END et110
 	"et182" => array (
 		"title" => "Digital Logic",
-		"description" => "The use of truth tables, Boolean equations, and diagrams to define, simplify, and implement logic-valued functions."
+		"description" => "The use of truth tables, Boolean equations, and diagrams to define, simplify, and implement logic-valued functions.",
+		"syllabus" => "files/course-sullabi/abet_ET182_2011.pdf"
 	), // END et182
 	"et190" => array (
 		"title" => "Applied Circuits",
-		"description" => "Application of Ohm's law, Kirchhoff's laws, and Thevenin's theorems to the analysis of AC and DC passive circuits. Electronic circuit topics are introduced."
-	), // END et182
+		"description" => "Application of Ohm's law, Kirchhoff's laws, and Thevenin's theorems to the analysis of AC and DC passive circuits. Electronic circuit topics are introduced.",
+		"syllabus" => "files/course-syllabi/abet_Math_190-2011.pdf"
+	), // END et190
 	"et210" => array (
 		"title" => "Computer-Aided Design",
-		"description" => "Computer-aided design using 3-D solid modeling software, with introduction to FEA simulation."
+		"description" => "Computer-aided design using 3-D solid modeling software, with introduction to FEA simulation.",
+		"syllabus" => "files/course-syllabi/abet_ET210_2011spr.pdf"
 	), // END et210
 	"et240" => array (
 		"title" => "Applied Statics",
