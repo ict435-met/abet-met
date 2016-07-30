@@ -67,7 +67,9 @@ $metCourses = array(
 	), //END et310
 	"et308" => array (
 		"title" => "Fluid Technology (with lab)",
-		"description" => "Measurements in fluid statics, dynamics, and hydraulic systems."
+		"description" => "Measurements in fluid statics, dynamics, and hydraulic systems.",
+		"syllabus" => "files/course-syllabi/abet_ET308_2011.pdf",
+		"lab_syllabus" => "files/course-syllabi/abet_ET308L_2011.pdf"
 	), //END et308
 	"et306" => array (
 		"title" => "Fundamental and Applied Thermodynamics (with Lab)",
@@ -154,7 +156,6 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 
 	$t_sHW = "";
 	foreach (array("good","average","bad") as $i) {
-			$t_sHW .= '<a href="'.$i.'.pdf" role="menuitem" class="list-group-item">The '.ucfirst($i).'<span class="badge">pdf</span></a>';
 	}
 		$sections[] = array("title" => "Sample Homework",
 			      "content" => '<div class="list-group" role="menu">'.$t_sHW.'</div>');
