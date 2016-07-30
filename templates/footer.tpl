@@ -3,22 +3,22 @@
             <!-- Bottom Footer
             ================================================== -->
             <section id="section5" class="bg-5 text-center">
-                <img src="//web.nmsu.edu/~bpcampbe/abet-met/images/bottom-tagline.png" width="480" height="136" alt="New Mexico State University, All About Discovery" class="img-responsive center-block">
+                <img src="{$smarty.const.SITE_ROOT}images/bottom-tagline.png" width="480" height="136" alt="New Mexico State University, All About Discovery" class="img-responsive center-block">
                 <hr>
                 <ul class="list-inline">
                     <li>
                         <a href="https://www.facebook.com/newmexicostateuniversity">
-                            <img alt="New Mexico State University Facebook" src="//web.nmsu.edu/~bpcampbe/abet-met/images/icn_facebook_32.png" />
+                            <img alt="New Mexico State University Facebook" src="{$smarty.const.SITE_ROOT}images/icn_facebook_32.png" />
                         </a>
                     </li>
                     <li>
                         <a href="https://twitter.com/nmsu">
-                            <img alt="New Mexico State University Twitter" src="//web.nmsu.edu/~bpcampbe/abet-met/images/icn_twitter_32.png" />
+                            <img alt="New Mexico State University Twitter" src="{$smarty.const.SITE_ROOT}images/icn_twitter_32.png" />
                         </a>
                     </li>
                     <li>
                         <a href="https://www.youtube.com/user/NewMexicoStateU">
-                            <img alt="New Mexico State University YouTube" src="//web.nmsu.edu/~bpcampbe/abet-met/images/icn_youtube_32.png" />
+                            <img alt="New Mexico State University YouTube" src="{$smarty.const.SITE_ROOT}images/icn_youtube_32.png" />
                         </a>
                     </li>
                 </ul>
