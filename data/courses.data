@@ -71,13 +71,13 @@ $metCourses = array(
 	), //END et308
 	"et306" => array (
 		"title" => "Fundamental and Applied Thermodynamics (with Lab)",
-		"description" => "First and second laws, properties of substances, thermodynamic cycles including power generation and refrigeration."
+		"description" => "First and second laws, properties of substances, thermodynamic cycles including power generation and refrigeration.",
+		"syllabus" => "files/course-syllabi/abet_ET306_2011.pdf",
+		"lab_syllabus" => "files/course-syllabi/abet_ET306L_2011.pdf"
 	), //END et306
 	"et396" => array (
 		"title" => "Heat Transfer and Applications",
-		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design.",
-		"syllabus" => "files/course-syllabi/abet_ET306_2011.pdf",
-		"lab_syllabus" => "files/course-syllabi/abet_ET306L_2011.pdf"
+		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design."
 	), //END et396
 	"et426" => array (
 		"title" => "Analysis/Design of Machine Elements",
@@ -118,10 +118,10 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 	$course['shortTitle'] = strtoupper($pageUrl[2]);
 	
 	/* If the requested page is one of the four pdf files, serve them then quit */	
-	$docArray = array("syllabus.pdf","good.pdf","average.pdf","bad.pdf");
+	$docArray = array("lab-syllabus.pdf", "syllabus.pdf","good.pdf","average.pdf","bad.pdf");
 	if (count($pageUrl) == 4 && in_array($pageUrl[3], $docArray)) {
 		// Convert sample-*.pdf to sample_* to grab actual file location from array
-		$t_sFile = str_replace('-','_',substr($pageUrl[3], 0, -4));
+		$t_sFile = substr($pageUrl[3], 0, -4);
 		$file = $course[$t_sFile];
 		if (!isset($file)) {
 			$file = 'files/test.pdf';
