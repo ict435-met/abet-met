@@ -30,19 +30,24 @@ $metCourses = array(
 		"description" => "The use of truth tables, Boolean equations, and diagrams to define, simplify, and implement logic-valued functions."
 	), // END et182
 	"et190" => array (
-		"title" => "Applied Circuits"
+		"title" => "Applied Circuits",
+		"description" => "Application of Ohm's law, Kirchhoff's laws, and Thevenin's theorems to the analysis of AC and DC passive circuits. Electronic circuit topics are introduced."
 	), // END et182
 	"et210" => array (
-		"title" => "Computer-Aided Design"
+		"title" => "Computer-Aided Design",
+		"description" => "Computer-aided design using 3-D solid modeling software, with introduction to FEA simulation."
 	), // END et210
 	"et240" => array (
-		"title" => "Applied Statics"
+		"title" => "Applied Statics",
+		"description" => "Fundamental topics of applied statics, including force system analysis, equilibrium, free body diagrams, methods of joints and sections, distributed loads, friction, centroids, area moments, and shear and moment diagrams."
 	), //END et240
 	"et241" => array (
-		"title" => "Applied Dynamics"
+		"title" => "Applied Dynamics",
+		"description" => "Applied kinematic and kinetic planer analysis of particles and rigid bodies, including use of kinematic equations, Newton's second law, the work energy method, and the impulse momentum method. With recitation sessions, as required."
 	), //END et241
 	"et217" => array (
-		"title" => "Manufacturing Processes (with Lab)"
+		"title" => "Manufacturing Processes (with Lab)",
+		"description" => "Manufacturing methods and industrial processes which include casting, forming and machining. Introduction to the composition, fabrication, characteristics, and applications of industrial materials."
 	), //END et217
 	"et328" => array (
 		"title" => "Kinematics of Machines"
@@ -127,7 +132,7 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 	}
 		$sections[] = array("title" => "Sample Homework",
 			      "content" => '<div class="list-group" role="menu">'.$t_sHW.'</div>');
-} else {
+} else { // There was no matching course so list all the ones that are known
 	$pageTemplate = 'one-column.tpl';
 
 	$smarty->assign("ContentTitle", "Courses");
