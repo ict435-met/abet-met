@@ -70,23 +70,29 @@ $metCourses = array(
 		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design."
 	), //END et396
 	"et426" => array (
-		"title" => "Analysis/Design of Machine Elements"
+		"title" => "Analysis/Design of Machine Elements",
+		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design."
 	), //END et426
 	"et435" => array (
-		"title" => "Senior Design and Project Management"
+		"title" => "Senior Design and Project Management",
+		"description" => "Analysis of machine elements including columns, springs, shafts, coupling mechanisms, gears, belts and chain drives, clutches, brakes, and bearings."
 	),
 	"et305" => array (
-		"title" => "Design for Manufacturing"
+		"title" => "Design for Manufacturing",
+		"description" => "The process of product design and development from concept to manufacturing to insure manufacturability, quality, cost effectiveness, and customer satisfaction."
 	), //END et305
 	"et410" => array (
-		"title" => "Senior Seminar"
+		"title" => "Senior Seminar",
+		"description" => "Transition from academics to business and industry."
 	), //END et410
 	"et422" => array (
-		"title" => "Mechanical Measurements"
+		"title" => "Mechanical Measurements",
+		"description" => "Techniques in mechanical measurements, including topics in experimental techniques, measurement devices and systems, data acquisition, data transmission, signal conditioning, data analysis, data verification, and report writing."
 	), //END et422
 	"et402" => array (
-		"title" => "Instrumentation"
-	), //END et402
+		"title" => "Instrumentation",
+		"description" => "Sensors/transducers, signal conditioning and transmission for measurement and control systems. Student project in an area of instrumentation and/or control is required."
+	) //END et402
 	
 ); // END $metCourses
 
