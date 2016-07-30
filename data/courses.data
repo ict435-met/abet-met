@@ -80,8 +80,10 @@ $metCourses = array(
 	
 ); // END $metCourses
 
-/* Process the page */
+/* Sort the array so that it's in numerical order, even if we input it otherwise */
+ksort($metCourses);
 
+/* Process the page */
 $bread[] = array("Courses", SITE_ROOT."documentation/courses/");
 
 if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
