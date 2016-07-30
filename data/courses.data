@@ -63,7 +63,8 @@ $metCourses = array(
 	), //END et328
 	"et310" => array (
 		"title" => "Applied Strength of Materials (with lab)",
-		"description" => "Application of principles of strength of materials to practical design and analysis problems."
+		"description" => "Application of principles of strength of materials to practical design and analysis problems.",
+		"syllabus" => "files/course-syllabi/abet_ET310_2010Fall.pdf",
 	), //END et310
 	"et308" => array (
 		"title" => "Fluid Technology (with lab)",
@@ -79,31 +80,38 @@ $metCourses = array(
 	), //END et306
 	"et396" => array (
 		"title" => "Heat Transfer and Applications",
-		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design."
+		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design.",
+		"syllabus" => "files/course-syllabi/abet_ET396_2011.pdf"
 	), //END et396
 	"et426" => array (
 		"title" => "Analysis/Design of Machine Elements",
-		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design."
+		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design.",
+		"syllabus" => "files/course-syllabi/abet_ET426_2010Fall.pdf"
 	), //END et426
 	"et435" => array (
 		"title" => "Senior Design and Project Management",
-		"description" => "Analysis of machine elements including columns, springs, shafts, coupling mechanisms, gears, belts and chain drives, clutches, brakes, and bearings."
+		"description" => "Analysis of machine elements including columns, springs, shafts, coupling mechanisms, gears, belts and chain drives, clutches, brakes, and bearings.",
+		"syllabus" => "files/course-syllabi/abet_ET435_2011.pdf"
 	),
 	"et305" => array (
 		"title" => "Design for Manufacturing",
-		"description" => "The process of product design and development from concept to manufacturing to insure manufacturability, quality, cost effectiveness, and customer satisfaction."
+		"description" => "The process of product design and development from concept to manufacturing to insure manufacturability, quality, cost effectiveness, and customer satisfaction.",
+		"syllabus" => "files/course-syllabi/abet_ET305_2010Fall.pdf",
 	), //END et305
 	"et410" => array (
 		"title" => "Senior Seminar",
-		"description" => "Transition from academics to business and industry."
+		"description" => "Transition from academics to business and industry.",
+		"syllabus" => "files/course-syllabi/abet_ET410_2011.pdf"
 	), //END et410
 	"et422" => array (
 		"title" => "Mechanical Measurements",
-		"description" => "Techniques in mechanical measurements, including topics in experimental techniques, measurement devices and systems, data acquisition, data transmission, signal conditioning, data analysis, data verification, and report writing."
+		"description" => "Techniques in mechanical measurements, including topics in experimental techniques, measurement devices and systems, data acquisition, data transmission, signal conditioning, data analysis, data verification, and report writing.",
+		"syllabus" => "files/course-syllabi/abet_ET422_2011.pdf"
 	), //END et422
 	"et402" => array (
 		"title" => "Instrumentation",
-		"description" => "Sensors/transducers, signal conditioning and transmission for measurement and control systems. Student project in an area of instrumentation and/or control is required."
+		"description" => "Sensors/transducers, signal conditioning and transmission for measurement and control systems. Student project in an area of instrumentation and/or control is required.",
+		"syllabus" => "files/course-syllabi/abet_ET402_syl.pdf"
 	) //END et402
 	
 ); // END $metCourses
@@ -156,7 +164,7 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 
 	$t_sHW = "";
 	foreach (array("good","average","bad") as $i) {
-			$t_sHW .= '<a href="'.$i.'.pdf" role="menuitem" class="list-group-item">Sample of '.ucfirst($i).' Coursework<span class="badge">pdf</span></a>';
+			$t_sHW .= '<a href="'.$i.'.pdf" role="menuitem" class="list-group-item">Sample of '.ucfirst($i).'<span class="badge">pdf</span></a>';
 	}
 		$sections[] = array("title" => "Sample Homework",
 			      "content" => '<div class="list-group" role="menu">'.$t_sHW.'</div>');
