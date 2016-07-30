@@ -1,4 +1,4 @@
-        <footer>
+﻿        <footer>
             <hr />
             <!-- Bottom Footer
             ================================================== -->
@@ -7,17 +7,17 @@
                 <hr>
                 <ul class="list-inline">
                     <li>
-                        <a href="http://www.facebook.com/newmexicostateuniversity">
+                        <a href="https://www.facebook.com/newmexicostateuniversity">
                             <img alt="New Mexico State University Facebook" src="//web.nmsu.edu/~bpcampbe/abet-met/images/icn_facebook_32.png" />
                         </a>
                     </li>
                     <li>
-                        <a href="http://twitter.com/#!/nmsu">
+                        <a href="https://twitter.com/nmsu">
                             <img alt="New Mexico State University Twitter" src="//web.nmsu.edu/~bpcampbe/abet-met/images/icn_twitter_32.png" />
                         </a>
                     </li>
                     <li>
-                        <a href="http://www.youtube.com/newmexicostateu">
+                        <a href="https://www.youtube.com/user/NewMexicoStateU">
                             <img alt="New Mexico State University YouTube" src="//web.nmsu.edu/~bpcampbe/abet-met/images/icn_youtube_32.png" />
                         </a>
                     </li>
