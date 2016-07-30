@@ -121,7 +121,7 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 	$docArray = array("lab-syllabus.pdf", "syllabus.pdf","good.pdf","average.pdf","bad.pdf");
 	if (count($pageUrl) == 4 && in_array($pageUrl[3], $docArray)) {
 		// Convert sample-*.pdf to sample_* to grab actual file location from array
-		$t_sFile = substr($pageUrl[3], 0, -4);
+		$t_sFile = str_replace('-','_',substr($pageUrl[3], 0, -4));
 		$file = $course[$t_sFile];
 		if (!isset($file)) {
 			$file = 'files/test.pdf';
