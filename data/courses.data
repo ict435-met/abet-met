@@ -50,19 +50,24 @@ $metCourses = array(
 		"description" => "Manufacturing methods and industrial processes which include casting, forming and machining. Introduction to the composition, fabrication, characteristics, and applications of industrial materials."
 	), //END et217
 	"et328" => array (
-		"title" => "Kinematics of Machines"
+		"title" => "Kinematics of Machines",
+		"description" => "Kinematic analysis of machine elements with topics of linkages, cams, and gears. Graphical and analytical solutions using computer techniques."
 	), //END et328
 	"et310" => array (
-		"title" => "Applied Stength of Materials (with lab)"
+		"title" => "Applied Strength of Materials (with lab)",
+		"description" => "Application of principles of strength of materials to practical design and analysis problems."
 	), //END et310
 	"et308" => array (
-		"title" => "Fluid Technology (with lab)"
+		"title" => "Fluid Technology (with lab)",
+		"description" => "Measurements in fluid statics, dynamics, and hydraulic systems."
 	), //END et308
 	"et306" => array (
-		"title" => "Fundamental and Applied Thermodynamics (with Lab)"
+		"title" => "Fundamental and Applied Thermodynamics (with Lab)",
+		"description" => "First and second laws, properties of substances, thermodynamic cycles including power generation and refrigeration."
 	), //END et306
 	"et396" => array (
-		"title" => "Heat Transfer and Applications"
+		"title" => "Heat Transfer and Applications",
+		"description" => "Fundamentals of conduction, convection, and radiation heat transfer. Application of heat transfer, thermodynamics, and fluid mechanics principles to thermal system analysis and design."
 	), //END et396
 	"et426" => array (
 		"title" => "Analysis/Design of Machine Elements"
