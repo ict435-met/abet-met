@@ -87,7 +87,9 @@ $bread[] = array("Courses", SITE_ROOT."documentation/courses/");
 if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 	/* Move selected course into easy to use variable */
 	$course = $metCourses[$pageUrl[2]];
-		
+	$course['shortTitle'] = strtoupper($pageUrl[2]);
+	
+	/* If the requested page is one of the four pdf files, serve them then quit */	
 	$docArray = array("syllabus.pdf","good.pdf","average.pdf","bad.pdf");
 	if (count($pageUrl) == 4 && in_array($pageUrl[3], $docArray)) {
 		// Convert sample-*.pdf to sample_* to grab actual file location from array
@@ -100,308 +102,28 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 		outputPDF($file, $t_sFile);
 	}
 		
-	$bread[] = array($pageUrl[2], SITE_ROOT."documentation/courses/".$pageUrl[2]);
-	$smarty->assign("ContentTitle",strtoupper($pageUrl[2]));
+	$bread[] = array($course['shortTitle'], SITE_ROOT."documentation/courses/".$pageUrl[2]);
+	$smarty->assign("ContentTitle",$course['shortTitle']);
 	$smarty->assign("ContentSubtitle",$course['title']);
 	
-//BUILD THE CONTENT OF THE PAGE BASED ON THE THE VALUE OF $pageUrl[2], THIS WILL BE THE CLASS NAME "class"
-switch ($pageUrl[2]){
-
-//ET 120-ECET START
-case "et120-ecet":
-	$sections = array(
-		 array(
-		 "title" => "ET 120 ECET",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Engineering Technology – ECET Option
-				</p>'
-		) 
-	); 
-	break;
-//ET 120-ECET END
-
-//ET 182 START
-case "et182":
-	$sections = array(
-		 array(
-		 "title" => "Course Description",
-			  "content" => '
-							<p>et182</p>
-			'),
-		array("title" => "Syllabi",
-			  "content" => '
-							</figure>
-							<p>et 182 syllabus</p>'
-			) 
+	if(isset($course['description'])) { // Only add a section for the course desc if it exists.
+		$sections[] = array(
+			"title" => "Course Description",
+			"content" => $course['description']
+		);
+	}
+	
+	$sections[] = array(
+		"title" => "Syllabi",
+		"content" => '<a href="syllabus.pdf" role="menuitem" class="list-group-item">'.$course['shortTitle'].' Syllabus<span class="badge">pdf</span></a>'
 	);
-	break;
-//ET 182 END
 
-//ET 190 START
-case "et190":
-	$sections = array(
-		 array(
-		 "title" => "ET 190",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Applied Circuits
-				</p>'
-		) 
-	); 
-	break;
-//ET 190 END
 
-//ET 210 START
-case "et210":
-	$sections = array(
-		 array(
-		 "title" => "ET 210",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Computer-Aided Design
-				</p>'
-		) 
-	); 
-	break;
-//ET 210 END
-
-//ET 240 START
-case "et240":
-	$sections = array(
-		 array(
-		 "title" => "ET 240",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Applied Statistics
-				</p>'
-		) 
-	); 
-	break;
-//ET 240 END
-
-//ET 241 START
-case "et241":
-	$sections = array(
-		 array(
-		 "title" => "ET 241",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Applied Dynamics
-				</p>'
-		) 
-	); 
-	break;
-//ET 241 END
-
-//ET 217 START
-case "et217":
-	$sections = array(
-		 array(
-		 "title" => "ET 217",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Manufacturing Processes (with Lab)
-				</p>'
-		) 
-	); 
-	break;
-//ET 217 END
-
-//ET 328 START
-case "et328":
-	$sections = array(
-		 array(
-		 "title" => "ET 328",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Kinematics of Machines				
-				</p>'
-		) 
-	); 
-	break;
-//ET 328 END
-
-//ET 310 START
-case "et310":
-	$sections = array(
-		 array(
-		 "title" => "ET 310",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Applied Strength of Materials (with Lab)
-				</p>'
-		) 
-	); 
-	break;
-//ET 310 END
-
-//ET 308 START
-case "et308":
-	$sections = array(
-		 array(
-		 "title" => "ET 308",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Fluid Technology (with Lab)
-				</p>'
-		) 
-	); 
-	break;
-//ET 308 END
-
-//ET 306 START
-case "et306":
-	$sections = array(
-		 array(
-		 "title" => "ET 306",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Fundamental and Applied Thermodynamics (with Lab)
-				</p>'
-		) 
-	); 
-	break;
-//ET 306 END
-
-//ET 396 START
-case "et396":
-	$sections = array(
-		 array(
-		 "title" => "ET 396",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Heat Transfer and Applications
-				</p>'
-		) 
-	); 
-	break;
-//ET 396 END
-
-//ET 426 START
-case "et426":
-	$sections = array(
-		 array(
-		 "title" => "ET 426",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Analysis/Design of Machine Elements
-				</p>'
-		) 
-	); 
-	break;
-//ET 426 END
-
-//ET 435 START
-case "et435":
-	$sections = array(
-		 array(
-		 "title" => "ET 435",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Senior Design and Project Management
-				</p>'
-		) 
-	); 
-	break;
-//ET 435 END
-
-//ET 305 START
-case "et305":
-	$sections = array(
-		 array(
-		 "title" => "ET 305",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Design for Manufacturing
-				</p>'
-		) 
-	); 
-	break;
-//ET 305 END
-
-//ET 410 START
-case "et410":
-	$sections = array(
-		 array(
-		 "title" => "ET 410",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Senior Seminar
-				</p>'
-		) 
-	); 
-	break;
-//ET 410 END
-
-//ET 422 START
-case "et422":
-	$sections = array(
-		 array(
-		 "title" => "ET 422",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Mechanical Measurements
-				</p>'
-		) 
-	); 
-	break;
-//ET 422 END
-
-//ET 402 START
-case "et402":
-	$sections = array(
-		 array(
-		 "title" => "ET 402",
-		 ),
-		array("title" => "Syllabi",
-			"content" => '
-				<p>
-				Instrumentation
-				</p>'
-		) 
-	); 
-	break;
-//ET 402 END
-
-}
 	$t_sHW = "";
-	foreach (array("good","average","bad","syllabus") as $i) {
+	foreach (array("good","average","bad") as $i) {
 			$t_sHW .= '<a href="'.$i.'.pdf" role="menuitem" class="list-group-item">The '.ucfirst($i).'<span class="badge">pdf</span></a>';
 	}
-		$sections[] = array("title" => "Sample Homework and Syllabus",
+		$sections[] = array("title" => "Sample Homework",
 			      "content" => '<div class="list-group" role="menu">'.$t_sHW.'</div>');
 } else {
 	$pageTemplate = 'one-column.tpl';
