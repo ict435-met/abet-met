@@ -156,6 +156,7 @@ if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $metCourses)) {
 
 	$t_sHW = "";
 	foreach (array("good","average","bad") as $i) {
+			$t_sHW .= '<a href="'.$i.'.pdf" role="menuitem" class="list-group-item">Sample of '.ucfirst($i).' Coursework<span class="badge">pdf</span></a>';
 	}
 		$sections[] = array("title" => "Sample Homework",
 			      "content" => '<div class="list-group" role="menu">'.$t_sHW.'</div>');
