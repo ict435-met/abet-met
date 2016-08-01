@@ -43,7 +43,7 @@ if (count($pageUrl) >= 3 && $pageUrl[2] <= $OO_maxYear && $pageUrl[2] >= $OO_min
 	$url = SITE_ROOT . "documentation/objectives-and-outcomes-archives/";
 	$sections = array();
 	$t_sOO = "";
-	foreach ($$OOFiles as $year => $filename) {
+	foreach ($OOFiles as $year => $filename) {
 		$t_sOO .= '<a href="'.$year.'" role="menuitem" class="list-group-item">'.$year.'<span class="badge">pdf</span></a>';
 	}
 		$sections[] = array("title" => " ",
