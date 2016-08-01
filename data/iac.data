@@ -4,6 +4,7 @@
 New files should be added in the format: iacYYYYMMDD.pdf to the abet-met/files directory.
 */
 
+/* Check if we have any files for a given year */ 
 function check_Year($needle, $haystack) {
 	if($haystack) {
 		foreach($haystack as $stack) {
