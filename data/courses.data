@@ -34,7 +34,7 @@ $metCourses = array(
 	"et190" => array (
 		"title" => "Applied Circuits",
 		"description" => "Application of Ohm's law, Kirchhoff's laws, and Thevenin's theorems to the analysis of AC and DC passive circuits. Electronic circuit topics are introduced.",
-		"syllabus" => "files/course-syllabi/abet_Math_190-2011.pdf"
+		"syllabus" => "files/course-syllabi/abet_ET190_191L_2011.pdf"
 	), // END et190
 	"et210" => array (
 		"title" => "Computer-Aided Design",
