@@ -123,6 +123,5 @@
             /* catch iOS devices */
             if (/iPad|iPhone|iPod/.test(navigator.userAgent)) $("body").addClass("ios");
         </script>{/literal}
-            {include 'ga.tpl'}
     </body>
 </html>
