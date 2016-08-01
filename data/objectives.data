@@ -30,6 +30,8 @@ foreach($dirContents as $e){
 
 /* Another link to the navigation breadcrumbs */
 $bread[] = array("Objectives and Outcomes Archives", SITE_ROOT."documentation/objectives-and-outcomes-archives/");
+$OO_minYear = 2009;
+$OO_maxYear = 2016;
 if (count($pageUrl) >= 3 && $pageUrl[2] <= $OO_maxYear && $pageUrl[2] >= $OO_minYear){
 	$file = "objective_outcomes_".$pageUrl[2].".pdf";
 	outputPDF("files/".$file, $file);
