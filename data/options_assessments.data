@@ -10,11 +10,11 @@
 /* Check if date range given in URL actually represents a file */ 
 function check_Year($needle, $haystack) {
 	if($haystack) {
-	foreach($haystack as $stack) {
-		if($stack['year'] === $needle) {
-			return true;
+		foreach($haystack as $stack) {
+			if($stack['year'] === $needle) {
+				return true;
+			}
 		}
-	}
 	}
 	return false;
 }

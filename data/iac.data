@@ -4,6 +4,17 @@
 New files should be added in the format: iacYYYYMMDD.pdf to the abet-met/files directory.
 */
 
+function check_Year($needle, $haystack) {
+	if($haystack) {
+		foreach($haystack as $stack) {
+			if($stack['year'] === $needle) {
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
 /*
 For loop to build IACFiles array
 Read dir and get listing of files starting with iac
@@ -58,13 +69,11 @@ if (count($pageUrl) == 5  || in_array($pageUrl[3], $IACFiles)){
 
 
 
-elseif(count($pageUrl) == 4 && ($pageUrl[2] == '2012' || $pageUrl[2] == '2013' || $pageUrl[2] == '2014' || $pageUrl[2] == '2015' || $pageUrl[2] == '2016' )) {
+elseif(count($pageUrl) == 4 && check_Year($pageUrl[2], $IACFiles)) {
 	//update breadcrumb		
 	$bread[] = array($pageUrl[2], SITE_ROOT."documentation/iac-agenda-and-minutes/".$pageUrl[2].'/');
 	$pageTemplate = 'one-column.tpl';
 	$smarty->assign("ContentTitle","IAC Agenda and Meetings ".strtoupper($pageUrl[2]));
-	//$smarty->assign("ContentSubtitle","I like pizza");
-
 
 	   //loop through array
 		foreach ($IACFiles as $i => $row) {     
