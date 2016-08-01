@@ -21,8 +21,8 @@ $dirContents = scandir('files', 1 );
 
 $OOFiles = array();
 foreach($dirContents as $e){
-    if (strpos($e, "objectives_outcomes_") !== FALSE){
-        $ooYear =substr($e,20,4);
+    if (strpos($e, "objective_outcomes_") !== FALSE){
+        $ooYear =substr($e, 19, 4);
         $ooFileName =substr($e, 0, -4);
 		$OOFiles[$ooYear] = $ooFileName;
 	}
