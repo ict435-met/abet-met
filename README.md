@@ -6,7 +6,16 @@ Installation
 ---------------------------------------------
 1. Unzip abet_met.tar.gz
 2. Run ```make install```
+  - Download and install Composer
+  - Download and configure Smarty Template Engine
+  - Ensure Smarty directories are writeable
 3. Open config.php and change SITE_ROOT to match as it would appear in a browser
+
+Requirements
+---------------------------------------------
+* Apache Web Server with mod_rewrite enabled
+* PHP 5+
+* Make (CMake, GMake... something to read a makefile)
 
 File Conventions
 ---------------------------------------------
