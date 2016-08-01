@@ -10,28 +10,20 @@ function outputPDF ($file, $savename = 'file.pdf') {
 	exit;	
 }
  
- $VitaeFiles = array(
-            array("name" => "Anthony Hyde",
-                   "fileName" => "vitahyde2011-abet"),
-            array("name" => "Jeffrey Beasley",
-					"fileName" => "jbeasley-2011"),       
-            array("name" => "Kenny A. Stevens",
-                  "fileName" => "k_stevens_2011"),
-			array("name" => "Lynn S. Kelly",
-					"fileName" => "lkelly-2010"),
- 			array("name" => "Paul Ricketts",
- 		 			"fileName" => "cricketts-2011"),
-			array("name" => "Ruinian Jiang",
-					"fileName" =>"jiang-2011"),
-			array("name" => "Thomas W. Jenkins",
-					"fileName" => "tjenkins-2011")       
+ $VitaeFiles = array("Anthony Hyde" => "vitahyde2011-abet",
+ 					 "Jeffrey Beasley" => "jbeasley-2011",
+					 "Kenny A. Stevens" => "k_stevens_2011",
+					 "Lynn S. Kelly" => "lkelly-2010",
+					 "Paul Ricketts" => "cricketts-2011",
+					 "Ruinian Jiang" =>"jiang-2011",
+					 "Thomas W. Jenkins" => "tjenkins-2011"       
  );
 
 
 
-if (count($pageUrl) == 3 ){
+if (count($pageUrl) == 3 && array_key_exists(str_replace("-", " ", $pageUrl[1]), $VitaeFiles)){
 		$file = $pageUrl[1];
-		$mypath=SITE_ROOT.'files/abet_vitae_'.$pageUrl[1];
+		$mypath=SITE_ROOT.'files/abet_vitae_'.$VitaeFiles[str_replace("-", " ", $pageUrl[1])];
 		outputPDF($mypath.".pdf", $file);
 	}
 
@@ -54,9 +46,9 @@ $smarty->assign("ContentSubtitle", "MET Faculty Vitae");
 $pageTemplate = 'one-column.tpl';
 
 
-foreach ($VitaeFiles as $i => $row) {
+foreach ($VitaeFiles as $name => $row) {
       
-             $slink .= '<a href="'.$row[fileName].'/" role="menuitem" class="list-group-item">'.$row[name].$pageUrl[1].'<span class="badge">pdf</span></a>';
+             $slink .= '<a href="'.str_replace(" ", "-", $name).'/" role="menuitem" class="list-group-item">'.$name.'<span class="badge">pdf</span></a>';
 		}//end for
 	
 $sections[] = array("title" => " ",
