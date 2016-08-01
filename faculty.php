@@ -9,10 +9,7 @@ function outputPDF ($file, $savename = 'file.pdf') {
 	readfile($file);
 	exit;	
 }
-
-
- $VitaeFiles=array ();
-        
+ 
  $VitaeFiles = array(
             array("name" => "Anthony Hyde",
                    "fileName" => "vitahyde2011-abet"),
@@ -27,8 +24,7 @@ function outputPDF ($file, $savename = 'file.pdf') {
 			array("name" => "Ruinian Jiang",
 					"fileName" =>"jiang-2011"),
 			array("name" => "Thomas W. Jenkins",
-					"fileName" => "tjenkins-2011"),
-       
+					"fileName" => "tjenkins-2011")       
  );
 
 

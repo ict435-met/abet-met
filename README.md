@@ -16,15 +16,20 @@ File Conventions
   * "good" => "files/filename.pdf"
   * "average" => "files/filename.pdf"
   * "bad" => "files/filename.pdf"
-* WEAVE Documentation - No code modification needed, looks for files automatically in "files".
+* WEAVE - No code modification needed, looks for files automatically in "files".
   * Expected file formatting "weave_darYYYY_YYYY.pdf" where YYYY_YYYY is like 2014_2015. Case sensitive.
-* IAC Documentation - No code modification needed, looks for files automatically in "files".
+* IAC - No code modification needed, looks for files automatically in "files".
   * Expected file formatting "iacYYYYMMDD.pdf" . Case sensitive.
-* Options Assessments Documentation - No code modification needed, looks for files automatically in "files".
+* Options Assessments - No code modification needed, looks for files automatically in "files".
   * Expected file formatting "options_assessmentsYYYY.pdf" where YYYY is the year. Case sensitive.
-*
-*
-*
+* Objectives and Outcomes - No code modification needed, looks for files automatically in "files".
+  * Expected file formatting "objective_outcomes_YYYY.pdf" where YYYY is the year. Case sensitive.
+* Faculty Vitae
+  * Files stored in files directory. Modify the array in faculty.php to include their name and filename.
+* Self Study
+  * File referenced in documentation.php. If changed update ```outputPDF("files/self_study.pdf", "met_self_study.pdf");```
+* Facilities
+  * File referenced in documentation.php. If changed update ```outputPDF("files/met_facilities.pdf", "met_facilities.pdf");```
 
 Authors
 ----------------------------------------------
