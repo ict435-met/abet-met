@@ -20,10 +20,10 @@ function outputPDF ($file, $savename = 'file.pdf') {
  );
 
 
-
-if (array_key_exists(str_replace("-", " ", $pageUrl[1]), $VitaeFiles)){
-		$file = $pageUrl[1];
-		$mypath = 'files/abet_vitae_'.$VitaeFiles[str_replace("-", " ", $pageUrl[1])];
+$testName = ucwords(str_replace("-", " ", $pageUrl[1]));
+if (array_key_exists($testName, $VitaeFiles)){
+		$file = $testName;
+		$mypath = 'files/abet_vitae_'.$VitaeFiles[$testName];
 		outputPDF($mypath.".pdf", $file);
 	}
 
@@ -35,7 +35,7 @@ $smarty->assign("DepartmentName","ABET Accreditation Documentation - Mechanical 
 $smarty->assign("Breadcrumbs", array(
 	array("ABET Accreditation", "#"),
 	array("Mechanical Engineering Technology", SITE_ROOT),
-	array("Faculty ==".str_replace("-", " ", $pageUrl[1]), "#")));
+	array("Faculty ==".$testName, "#")));
 
 
 
