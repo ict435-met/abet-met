@@ -35,7 +35,7 @@ $smarty->assign("DepartmentName","ABET Accreditation Documentation - Mechanical 
 $smarty->assign("Breadcrumbs", array(
 	array("ABET Accreditation", "#"),
 	array("Mechanical Engineering Technology", SITE_ROOT),
-	array("Faculty", SITE_ROOT."faculty/"));
+	array("Faculty", SITE_ROOT."faculty/")));
 
 
 
