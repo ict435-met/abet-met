@@ -48,7 +48,7 @@ $pageTemplate = 'one-column.tpl';
 
 foreach ($VitaeFiles as $name => $row) {
       
-             $slink .= '<a href="'SITE_ROOT.'faculty/'.str_replace(" ", "-", $name).'/" role="menuitem" class="list-group-item">'.$name.'<span class="badge">pdf</span></a>';
+             $slink .= '<a href="'.SITE_ROOT.'faculty/'.str_replace(" ", "-", $name).'/" role="menuitem" class="list-group-item">'.$name.'<span class="badge">pdf</span></a>';
 		}//end for
 	
 $sections[] = array("title" => " ",
