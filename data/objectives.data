@@ -31,7 +31,7 @@ foreach($dirContents as $e){
 /* Another link to the navigation breadcrumbs */
 $bread[] = array("Objectives and Outcomes Archives", SITE_ROOT."documentation/objectives-and-outcomes-archives/");
 
-if (count($pageUrl) >= 3 && array_key_exits($pageUrl[2], $OOFiles)){
+if (count($pageUrl) >= 3 && array_key_exists($pageUrl[2], $OOFiles)){
 	$file = "objective_outcomes_".$pageUrl[2].".pdf";
 	outputPDF("files/".$file, $file);
 
